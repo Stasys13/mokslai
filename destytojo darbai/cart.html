@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #f4f5f7;
+        }
+
+        th {
+            text-align: left;
+            font-size: 18px;
+            padding: 13px 0;
+        }
+
+        td {
+            border-top: 2px solid #ececec;
+            font-size: 14px;
+            padding: 20px 0;
+        }
+
+        td:last-child,
+        td:nth-child(2) {
+            font-weight: bold;
+        }
+
+        td:nth-child(2) {
+            font-size: 16px;
+            width: 30%;
+        }
+
+        td:nth-child(3) {
+            width: 30%;
+        }
+
+        td:nth-child(4) {
+            letter-spacing: 6px;
+        }
+
+        td:nth-child(1) {
+            width: 100px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 0 70px;
+        }
+
+        .button {
+            display: block;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 15px 40px;
+            font-size: 14px;
+            text-align: center;
+        } 
+
+        .empty-button {
+            border: 2px solid black;
+            color: black;
+            background-color: transparent;
+            font-weight: 600;
+        }
+
+        .container {
+            width: 1100px;
+            margin: 100px auto;
+        }
+
+        .totals {
+            width: 450px;
+        }
+
+        .summary {
+            background-color: #f9f9f9;
+            border: 1px solid #dcdcdc;
+            padding: 13px 30px;
+            margin-bottom: 20px;
+        }
+
+        .summary ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .summary li {
+            border-bottom: 1px solid #dcdcdc;
+            padding: 17px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .summary li:last-child {
+            border: none;
+        }
+
+        .totals-wrapper {
+            display: flex;
+            justify-content: end;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="cart-01.webp" alt="Produkto nuotrauka"></td>
+                    <td>Lorem, ipsum.</td>
+                    <td>€17.00</td>
+                    <td>
+                        <span>-</span>
+                        <span>2</span>
+                        <span>+</span>
+                    </td>
+                    <td>€34.00</td>
+                </tr>
+                <tr>
+                    <td><img src="cart-02.webp" alt="Produkto nuotrauka"></td>
+                    <td>Lorem, ipsum.</td>
+                    <td>€15.00</td>
+                    <td>
+                        <span>-</span>
+                        <span>2</span>
+                        <span>+</span>
+                    </td>
+                    <td>€30.00</td>
+                </tr>
+                <tr>
+                    <td><img src="cart-03.webp" alt="Produkto nuotrauka"></td>
+                    <td>Lorem, ipsum dolor.</td>
+                    <td>€17.00</td>
+                    <td>
+                        <span>-</span>
+                        <span>2</span>
+                        <span>+</span>
+                    </td>
+                    <td>€34.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="buttons">
+            <a href="#" class="button">Continue shopping</a>
+            <a href="#" class="button empty-button">Update Cart</a>
+        </div>
+        <div class="totals-wrapper">
+            <div class="totals">
+                <div class="summary">
+                    <ul>
+                        <li>
+                            <strong>Subtotal</strong>
+                            <span>€34.00</span>
+                        </li>
+                        <li>
+                            <strong>Total</strong>
+                            <span>€60.00</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="checkout">
+                    <a href="#" class="button">Proceed to checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

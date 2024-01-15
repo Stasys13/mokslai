@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #E5E5E5;
+        }
+        .container {
+            width: 1440px;
+            height: 900px;
+            margin: 0 auto;
+            display: flex;
+            margin-top: 80px;
+        }
+        .box img {
+            top: 23px;
+            left: 45px;
+            position: absolute;
+        }
+        .box {
+            width: 50%;
+            height: 100%;
+            background-image: url(1.png);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .box-inside, i {
+            color: #03A9F4;
+            font-size: 26px;
+        }
+        .box2 {
+            width: 50%;
+            height: 100%;
+            background-image: url(2.png);
+            background-color: #FFFFFF;
+        }
+        .icons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .linked, 
+        .twiter, 
+        .fb {
+            background-color: #FFFFFF;
+            width: 384px;
+            height: 34px;
+            border: none;
+            border-radius: 15px;
+            margin-bottom: 35px; 
+            display: flex;  
+            justify-content: center; 
+            align-items: center;
+            gap: 10px;       
+        } 
+        a {
+            text-decoration: none;
+
+        }
+    </style>
+</head>
+<body>  
+    <div class="container">
+        <div class="box">
+            <div class="box-inside">
+                <img src="3.png" alt="">
+                <div class="icons">
+                    <button class="linked">
+                        <i class="bi bi-linkedin"></i>
+                        <a href="#">Sign up with Linkedln</a>
+                    </button>
+                    <button class="twiter">
+                        <i class="bi bi-twitter"></i>
+                        <a href="#">Sign up with Twiter</a>
+                    </button>
+                    <button class="fb">
+                        <i class="bi bi-facebook"></i>
+                        <a href="#">Sign up with Facebook</a>
+                    </button>                    
+                </div>
+            </div>
+        </div>
+            <div class="box2">
+                
+            </div>
+    </div>
+    
+</body>
+</html>
