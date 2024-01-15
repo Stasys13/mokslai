@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prekiu-krepselis</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f3f3f3;
+            font-weight: 600;
+        }
+        .container {
+            width: 1300px;
+            padding: 10px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+       
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .thead {
+            background-color: #f4f5f7;
+            border-bottom: 2px solid #e5e5e5;
+            height: 50px;
+        }
+
+        table th {
+            text-align: left;
+        }
+        .foto {
+            border-bottom: 2px solid #e5e5e5;
+            height: 120px;
+        } 
+         
+      
+        .checkout {
+            height: 40px;
+            width: 300px;
+            background-color: black;
+            color: white;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            margin-top: 20px;
+            
+        }
+        .Subtotal {
+            width: 200px;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+        }
+        .Total {
+            width: 160px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+
+        }
+        .totals {
+            background-color: #f3f3f3;
+            width: 400px;
+            border: 2px solid #d1d1d1;
+            display: flex;
+            justify-content: flex-end; 
+            flex-direction: column;
+            margin-top: 50px;
+            padding: 30px;
+        }
+        .st {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .st1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #d1d1d1;;
+        }
+        button {
+            width: 400px;
+            height: 40px;
+            background-color: black;
+            color: white;
+            margin-top: 30px;
+            
+        }
+        .button1 {
+            text-decoration: none;
+            color: white;
+        }
+        .totals-wrapper {
+            display: flex;
+           align-items: flex-end;
+            flex-direction: column;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">           
+           <table>
+                <thead  class="thead">
+                    <tr>
+                        <th style="width: 100px;"></th>
+                        <th style="width: 400px;">Product</th>
+                        <th>Price</th>
+                        <th style="width: 130px;" >Quantity</th>
+                        <th style="width: 150px;" >Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="foto">
+                        <td><img src="cart-01.webp" alt=""></td>
+                        <td>Plant pots</td>
+                        <td>$17.00</td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;  +</td>
+                        <td>£635.00</td>
+                    </tr>
+                    <tr class="foto">
+                        <td> <img src="cart-02.webp" alt=""></td>
+                        <td>Teapot with black tea</td>
+                        <td>$14.00</td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;  +</td>
+                        <td>£635.00</td>
+                    </tr>
+                    <tr style="height: 120px;">
+                        <td> <img src="cart-03.webp" alt=""></td>
+                        <td>Wooden Flowerpot</td>
+                        <td>$14.00</td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;  +</td>
+                        <td>£635.00</td>
+                    </tr>
+                </tbody>    
+             </table>
+                <div class="buttons">
+                    <a class="Subtotal" href="#">Continue shopping</a>
+                    <a class="Total" href="#">Update cart</a>
+                </div>
+                <div class="totals-wrapper">
+                    <div class="totals">
+                        <div class="st">
+                        <h3>Subtotal</h3>
+                        <h3>$87.00</h3>
+                        </div>
+                        <div class="st1">
+                            <h3>Total</h3>
+                        <h4>$87.00</h4>
+                        </div>
+                    </div>
+                    <div>
+                        <button> <a class="button1" href="#">Proceed to checkout</a></button>
+                    </div>
+                </div>
+            
+    </div>
+
+    
+</body>
+</html>

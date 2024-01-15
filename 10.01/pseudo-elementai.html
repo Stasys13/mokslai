@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo elements</title>
+    <style>
+        h1::before {
+            content: "Antraštė: ";
+            background-color: tomato;
+            color: white;
+            display: block;
+            padding: 10px 20px;
+        }
+
+        h1::after {
+            content: "Antraštės pabaiga";
+            background-color: rgb(5, 151, 0);
+            color: white;
+            display: block;
+            padding: 10px 20px;
+        }
+
+        body::after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            display: block;
+            background-color: coral;
+        }
+
+        div {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, enim.</h1>
+    <h2>
+        <div></div>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, provident?
+    </h2>
+</body>
+</html>

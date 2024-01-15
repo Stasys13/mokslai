@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #4994ec;
+            margin: 0;
+            font-family:  'Ubuntu', sans-serif;;
+        }
+        h1 {
+            font-weight: 500;
+        }
+        .container {
+            width: 400px;
+            background-color: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding: 50px;
+            font-size: 14px;
+        }
+        .payment {
+            font-size: 14px;
+           font-weight: 300;
+           /* padding: 20px 10px 0px ; */
+          
+        }
+        label {
+            display: block;
+            display: flex;
+            margin-top: 10px;
+            
+        }
+        .kalendorius {
+            justify-content: center;
+            display: flex;
+            display: block;
+            width: 100%;
+        }
+        .cvc {
+            border: none;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            display: block;
+           
+        }
+        .holder {
+            width: 100%;
+            display: block;
+            /* padding: 20px 0px; */
+            background-color: white;
+            border: 1px solid gray;
+            display: flex;
+            align-items: center;
+            
+        }
+        .holder input {
+            background-color: white;
+        }
+        .pay {
+            background-color: #4994ec;
+            height: 50px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            
+        }
+        .pay a {
+            text-decoration: none;
+            color: white;
+        }
+        .excvc {
+            display: flex;
+            padding: 0px 0px 10px;
+            gap: 20px;
+        }
+        input {
+            border: none;
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        .half {
+            width: 50%;
+           
+        }
+        form i {
+            padding-left: 10px;
+            font-size: 14px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="payment">
+            <h1>Payment Gateway</h1>
+        </div>
+            <form>
+                <label>Card holder:</label>
+                <div class="holder">
+                    <i class="bi bi-person-fill"></i>
+                    <input placeholder="Coding Market">
+                </div>
+                <label>Card Number:</label>
+                <div class="holder">
+                    <i class="bi bi-credit-card-2-front"></i>
+                    <input placeholder="Card Number">
+                </div>
+                <div class="excvc">
+                    <div class="half">
+                        <label>Expiry date:</label>
+                        <div class="holder">
+                            <i class="bi bi-calendar3"></i>
+                            <input value="00  /  00" disabled>
+                        </div>
+                    </div>
+                    <div class="half">
+                        <label>CVC:</label>
+                        <div class="holder">
+                            <i class="bi bi-lock-fill"></i>
+                            <input placeholder="000">
+                        </div>
+                    </div>
+                </div>
+                <div class="pay">
+                    <a href="#">Pay</a>
+                </div>
+            </form>
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border radius</title>
+    <style>
+        .box {
+            width: 250px;
+            height: 250px;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .tomato {
+            background-color: tomato;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .radius {
+            /* Užlenkimas visiems keturiems kampams */
+            /* border-radius: 20px; */
+            /* Kiekvieno kampo užlenkimas individualiai */
+            border-radius: 20px 50px 30px 100px;
+        }
+
+        .overflow {
+            overflow: hidden;
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        .circle {
+            /* Apskritimas */
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box purple radius"></div>
+    <div class="box orange radius overflow">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quasi totam impedit delectus est ducimus nihil voluptates quidem. Pariatur corporis eos architecto placeat explicabo porro blanditiis error sit quos praesentium aliquam dolores, rerum rem sequi ex sunt labore expedita reiciendis voluptatem quibusdam soluta. Vitae placeat ullam dolore soluta. Aut, tenetur, ratione eos vero nobis quibusdam nisi accusamus itaque a reprehenderit fuga dignissimos iure similique nesciunt eveniet! Repellat sunt fuga tempore, delectus necessitatibus molestiae! Quod ullam tempora ratione aut quia omnis officia modi commodi? Ipsam molestiae reiciendis asperiores eius quos quam id dignissimos quis repellat? Quam esse ipsum at necessitatibus atque.
+    </div>
+    <div class="content tomato radius overflow">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, eius laboriosam. Perferendis nemo deserunt nobis reiciendis quam excepturi itaque sed facere doloremque, autem assumenda reprehenderit alias corrupti culpa, et quis ratione, tempore laboriosam cumque. Inventore alias sed modi corporis mollitia explicabo iure quas ad ullam, ipsa excepturi iste et id nostrum dolorem deleniti! A iure est deserunt maxime cupiditate adipisci ipsa mollitia numquam quo repellendus officia minima laboriosam, enim facere vero ex facilis fuga eaque fugit reiciendis necessitatibus. Cupiditate voluptas a nisi eligendi ducimus voluptatum animi, et ut, sint culpa iure ullam sit alias aut deleniti delectus, iste corporis facilis.
+    </div>
+    <div class="box yellow circle"></div>
+</body>
+</html>

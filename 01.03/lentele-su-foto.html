@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lentele su foto</title>
+    <style>
+        body {
+            background-image: url(clothes-bg.png);
+            display: flex;
+            flex-wrap: wrap;
+            color: white;
+        }
+
+        table {
+            width: 30%;
+            background-color: black;
+            color: white;
+            padding-top: 20px;
+            padding-left: 30px;
+            padding-bottom: 30px;
+            padding-right: 30px;
+
+        }
+
+        .aqua {
+            text-align: left;
+            color: white;
+        }
+
+        .aqua2 {
+            text-align: left;
+            background-color: lightgrey;
+        }
+
+        td {
+
+            width: 50px;
+        }
+
+        .zinute {
+            height: 200px;
+            background-color: lightgrey;
+            /* Vertikalus teksto lygiavimas */
+            vertical-align: top;
+        }
+
+        .quote {
+            text-align: left;
+            background-color: green;
+            color: white;
+            text-align: center;
+        }
+
+        tr {
+            background-color: lightgrey;
+        }
+
+        .container {
+            display: flex;
+            width: 1024px;
+            justify-content: space-between;
+            margin: 0 auto; 
+        }
+
+        .text {
+            width: 300px;
+        }
+
+        table {
+            width: 430px;
+            /* Tarpai tarp eilučių ir stulpelių */
+            border-spacing: 15px;
+        }
+
+        .heading {
+            /* Panaikinama prieš tai buvusi reikšmė */
+            background-color: unset;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam, vitae possimus eaque, minus est
+                assumenda quasi similique consectetur architecto ipsa ullam quisquam laudantium voluptas quas modi nam
+                harum, dignissimos velit.</p>
+        </div>
+        <table>
+            <thead>
+                <tr class="heading">
+                    <td colspan="2">
+                        <h1>Get a quote</h1>
+                    </td>
+                </tr>
+                <tr class="heading">
+                    <td colspan="2">
+                        <h5>We will get back to you in 24 h</h5>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="aqua">
+                    <th colspan="2">first name</th>
+                </tr>
+                <tr class="aqua2">
+                    <th colspan="2">Last name</th>
+                </tr>
+                <tr>
+                    <td class="email">Email</td>
+                    <td class="phone">Phone number</td>
+                </tr>
+                <tr class="zinute">
+                    <td colspan="4">Type message here</td>
+                </tr>
+                <tr class="quote">
+                    <td colspan="2">Get quote</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</body>
+
+</html>

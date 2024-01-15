@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sask_faktura</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        .sask_faktura {
+            border-left: 1px gray;
+            border-top: 1px gray;
+            border-collapse: collapse;
+        }
+
+        th {
+            border-right: gray;
+            border-top: gray;
+            background-color: white;
+        }
+
+        td {
+            border-right: gray;
+            border-bottom: gray;
+        }
+        .products {
+            background-color: rgb(80, 80, 255);
+            color: white;
+            font-weight: bold;
+        }
+        .balance {
+            background-color: lightblue;
+        }
+        .borders {
+            font-weight: bold;
+            color: darkblue;
+        }
+        .spalva{
+            color: gray;
+            text-align: left;
+        }
+        .suma {
+            font-weight: bold;
+        }
+        .skaiciai {
+            font-weight: 600;
+        }
+        .skaiciai2 {
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <table class="sask_faktura">
+                        <tr class="spalva">
+                            <th colspan="4">invoice</th>
+                        </tr>
+                        <td colspan="3">Your company name</td>
+                        <td class="skaiciai">2023-06-16</td>
+                        <tr>
+                            <td colspan="4">Street</td>
+                        </tr>
+                        <td colspan="3">city, state, zip code</td>
+                        <td class="skaiciai2">20230616</td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="4">phone number</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">email adress</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr class="borders">
+                            <td colspan="2">BILL TO</td>
+                            <td colspan="2">SHIP TO</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">contact name</td>
+                            <td colspan="2">name/dept</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">clien company name</td>
+                            <td colspan="2">clien company name</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">adress</td>
+                            <td colspan="2">adress</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">phone, email</td>
+                            <td colspan="2">phone</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr class="products">
+                            <td>DESCRIPTION</td>
+                            <td>QTY</td>
+                            <td>UNIT PRICE</td>
+                            <td>TOTAL</td>
+                        </tr>
+                        <TR>
+                            <td>monitorius</td>
+                            <td>10</td>
+                            <td>109.99</td>
+                            <td>1009.9</td>
+                        </TR>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>0.00</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>SUBTOTAL</td>
+                            <td>1009.9</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>discount</td>
+                            <td>0.00</td>
+                        </tr>
+                        <TR>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td class="suma">Balance due</td>
+                            <td class="balance">$1009.9</td>
+                        </TR>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <table class="sask_faktura">
+                        <tr>
+                            <td colspan="4">Pardavejas</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

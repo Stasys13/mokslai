@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Kortele</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #e6f2fc;
+            font-family:  'Open Sans', sans-serif;;
+            
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 800px; 
+            
+           margin: 0 auto;  
+          margin-top: 50px;
+           padding: 30px;   
+
+        }
+        .pirma-eilute {
+            margin: 20px 0px;
+             display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 35px;
+        }
+        
+        h3 {
+            font-weight: 600;
+            margin: 0px; 
+            font-size: 10px;
+        }
+        h5 {
+            font-weight: 300;
+            font-size: 10px;
+            margin:  0px;
+        }
+                      
+        .trecia {
+            border: 1px solid gray;
+            background-color: #fafafa;
+            display: flex;
+            align-items: center;    
+            height: 35px;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+        .trecia input {
+            border: none;
+            background-color: #fafafa;
+            width: 100%;
+            height: 34px;
+        }
+        .pirma-eilute a {
+            text-decoration: none;
+
+        }
+        .trecia-eilute {
+            display: flex;
+            flex-wrap: wrap;
+            height: 35px;
+            width: 100%;
+            margin: 0px 0px 20px 0px;
+            
+        }
+            
+        .label {
+           
+            width: 50%;            
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .value {
+            width: 50px;
+        }
+        
+        .data {
+           width: 50%;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .data input {
+            width: 100%;
+        }
+        button {
+            width: 100%;
+            background-color: #3861f6;
+            padding: 10px 0px;
+            color: white;
+            border: none;
+            margin-top: 40px;
+        }
+        .input-border {
+            border: 1px solid gray;
+            display: flex;
+            width: 100%;
+        }
+
+        .input-border input {
+            border: none;
+            text-align: center;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="pirma-eilute">
+            <div class="h3,h5">
+                <h3>Card Number</h3>
+                <H5>Enter 16-digit card number on the card</H5>
+            </div>
+            <div class="antra">
+                <i class="bi bi-pencil"></i>
+                <a href="#">Edit</a>
+            </div>
+        </div>   
+         <div class="trecia">
+            <img src="images/11ku.svg" alt="">
+            <input placeholder="LT5165516551655165">
+        </div>
+        <div class="trecia-eilute">
+            <div class="label">
+                <h3>Expiry Date</h3>
+                <h5>Enter the expiration dataof the card</h5>
+            </div>
+            <div class="data">
+                <input placeholder="MM">
+                /
+                <!-- <input class="value" value="/"> -->
+                <input placeholder="YY">
+            </div>
+        </div>
+        <div class="trecia-eilute">
+            <div class="label">
+                <h3>CVC Number</h3>
+                <h5>Enter card verification code from the back of the card</h5>
+            </div>
+            <div class="data">
+                <div class="input-border">
+                    <input type="text">
+                    <i class="bi bi-eye"></i>
+                </div>
+            </div>
+        </div>
+        <div class="trecia-eilute">
+            <div class="label">
+                <h3>Cardholder Name</h3>
+                <h5>Enter cardholders name</h5>
+            </div>
+            <div class="data">
+                <div class="input-border">
+                    <input placeholder="CARDHOLDER NAME" >
+                    <i class="bi bi-person"></i>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button>Pay Now</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

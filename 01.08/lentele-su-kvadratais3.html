@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxes Carousel</title>
+    <style>
+        /* Žvaigždutė yra visų elementų selektorius */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #192123;
+        }
+
+        .carousel {
+            /* display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            gap: 20px; */
+            margin-top: 200px;
+        }
+
+        .boxes {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #4b5659;
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 90px;
+            color: #192123;
+            padding-left: 20px;
+            line-height: 338px;
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #95a5a6;
+        }
+
+        .active {
+            background-color: #b4e900;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <div class="boxes">
+            <div class="box active">01</div>
+            <div class="box">02</div>
+            <div class="box">03</div>
+        </div>
+        <div class="dots">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+</body>
+</html>

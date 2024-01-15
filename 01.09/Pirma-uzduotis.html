@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body{ 
+        font-family: 'Poppins', sans-serif;
+        background-color: pink;
+    
+        
+    }
+    .container {
+        width: 500px;
+        height: 600px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin: 50px auto 0;
+       
+        /* margin-top: 100px;         */
+    }
+    input {
+        height: 50px;
+        width: 400px;
+    }
+   
+    input {
+        margin-top:  20px;
+        margin-bottom: 20px;
+    }
+    button {
+        margin-top:  20px;
+        margin-bottom: 20px;
+    }
+    .antra {
+        width: 200px;
+        margin-left: 0;
+    }
+
+    .links {
+        display: flex;
+        width: 400px;
+    }
+
+    .login1 {
+        display: block;
+        padding: 10px 20px;
+        background-color: pink;
+        width: 50%;
+        text-decoration: none;
+    }
+    .password {
+        text-decoration: none;
+        width: 80%;
+        color: pink;
+    }
+    .links {
+        text-align:  center;
+    }
+    .signup1 {
+        width: 50%;
+        border: 1px solid gray;
+        padding: 10px 20px;
+        text-decoration: none;
+    }
+    .signup {
+        text-decoration: none;
+        color:  pink;
+    }
+    .login {
+        width: 400px;
+        height: 50px;
+        background-color: pink;
+    }
+    .pilnas {
+        width: 80%;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Login Form</h1>
+        </div class="pirma">
+            <div class="links">
+                <a href="#" class="login1">Login</a>
+                <a href="#" class="signup1">Signup</a>
+            </div>
+            <div>
+                <input type="text" placeholder="Email Address">
+            </div>
+            <div>
+                <input type="Password" placeholder="password">
+            </div>
+            <div class="pilnas">
+                <a href="" class="password">Forgot password?</a>
+            </div>
+            <div>
+                <button class="login">Login</button>
+            </div>
+            <div>
+                Not a member? <a href="#" class="signup">Signup now</a>
+            </div>
+    </div>  
+    
+</body>
+</html>

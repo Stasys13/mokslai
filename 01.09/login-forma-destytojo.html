@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fa4299;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fa4299;
+        }
+
+        .login {
+            width: 400px;
+            margin: 100px auto 0;
+            background-color: white;
+            padding: 30px;
+        }
+
+        .login h1 {
+            font-weight: 600;
+            font-size: 35px;
+            text-align: center;
+            margin: 0 0 25px;
+        }
+
+        .links {
+            border: 1px solid #d7d7d7;
+            display: flex;
+            margin-bottom: 30px;
+        }
+
+        .links a {
+            /* text-decoration: none; */
+            color: #29120b;
+            width: 50%;
+            text-align: center;
+            font-size: 19px;
+            font-weight: 500;
+            padding: 8px 0;
+        }
+
+        .links .active {
+            color: white;
+            background-color: #fa4299;
+        }
+
+        form input {
+            width: 100%;
+            border: 1px solid #d7d7d7;
+            border-bottom: 2px solid #d7d7d7;
+            /* border-bottom-width: 2px; */
+            font-size: 17px;
+            font-family: 'Poppins', sans-serif;
+            padding: 8px 15px;
+        }
+
+        form input:first-child {
+            margin-bottom: 20px;
+        }
+
+        form button {
+            color: white;
+            background-color: #fa4299;
+            border: none;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            font-size: 19px;
+            font-weight: 500;
+            padding: 8px 0;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .forgot-password {
+            margin: 4px 0 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <h1>Login Form</h1>
+        <div class="links">
+            <a href="#" class="active">Login</a>
+            <a href="#">Signup</a>
+        </div>
+        <form>
+            <input type="text" placeholder="Email Address">
+            <input type="password" placeholder="Password">
+            <div class="forgot-password">
+                <a href="#">Forgot password?</a>
+            </div>
+            <button>Login</button>
+        </form>
+        <div class="signup-link">
+            <span>Not a member?</span>
+            <a href="#">Signup now</a>
+        </div>
+    </div>
+</body>
+</html>

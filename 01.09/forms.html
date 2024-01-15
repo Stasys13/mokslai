@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        label {
+            display: block;
+            margin: 5px 0;
+
+        }
+        input {
+            display: block;
+            width: 800px;
+            height:5;
+            border: 1px solid rgb(12, 12, 4);
+            padding: 10px 20px;
+            background-color: azure;
+            
+              }
+        input[type="checkbox"] {
+            width: unset;
+            display: inline;
+
+        }
+        input[type="radio"] {
+            width: unset;
+            display: inline;
+        }
+        select {
+            width: 100%;
+            border: 1px solid green;
+            padding: 10px 20px;
+            background-color: azure;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+        <input type="text">
+        </div>
+        <div>
+            <label>Jusu vardas</label>
+            <input type="text">
+        </div>
+        <div>
+            <label> Jusu vardas</label>
+            <input type="text" placeholder="Jusu vardas">
+        </div>
+        <div>
+            <label>Slaptazodis</label>
+            <input type="Password">
+        </div>
+        <div>
+            <label>jusu amzius</label>
+            <input type="number">
+        </div>
+        <div>
+            <label for="">Pasirinkite spalva</label>
+            <input type="color">
+            <div>
+                <label for="pasirinkti spalva is saraso"></label>
+                <input type="color" list="spalvos">
+                <datalist id="spalvos">
+                    <option value="#212529">pirma</option>
+                    <option value="#f1f1f1">antra</option>
+                </datalist>
+            </div>
+        </div>
+        <div>
+            <label>Datos pasirinkimas</label>
+            <input type="date">
+        </div>
+        <div>
+            <label>datos ir laiko pasirinkimas</label>
+            <input type="datetime-local">
+         </div>
+         <div>
+            <label>Failo pasirinkimas</label>
+            <input type="file">
+        </div>
+        <div>
+            <label>Keliu failu pasirinkimas</label>
+            <input type="file" multiple>      
+         </div>
+         <div>
+            <label>Priskirta reiksme</label>
+            <input type="text" value="prie tai buvusi reiksme">
+
+         </div>
+            <label>isjungti laukeliai</label>
+            <input type="text" value="https://google.com" disabled>
+         <div>
+            <label>neredaguojami laukeliai</label>
+            <input type="text" value="https://google.com" readonly>
+
+         </div>
+         <div>
+            <label>
+                <input type="checkbox">
+                Sutinku su vartojimo politika
+            </label>
+         </div>
+         <div>
+            <input type="checkbox" id="naujienlaiskis">
+            <label for="naujienlaiskis">sutinku gauti naujienlaiski</label>
+         </div>
+         <div>
+            <h4>pasirinkite jus dominancia tema</h4>
+            <div>
+                <label>
+                    <input type="radio" name="topic">
+                    saskaitos
+                </label>
+            </div>
+         </div>
+         <div>
+            <div>
+                <h4>pasirinkite jus dominancia tema</h4>
+                <div>
+                    <label>
+                        <input type="radio" name="topic">
+                        dakaras
+                    </label>
+                </div>
+             </div>
+         </div>
+         <div>
+            <div>
+                <h4>pasirinkite jus dominancia tema</h4>
+                <div>
+                    <label>
+                        <input type="radio" name="topic">
+                     naujo paslaugu uzsakymas
+                    </label>
+                </div>
+             </div>
+         </div>
+         <div>
+            <div>
+                <h4>pasirinkite jus dominancia tema</h4>
+                <div>
+                    <label>
+                        <input type="radio" name="topic">
+                        atsiliepimai
+                    </label>
+                </div>
+             </div>
+         </div>
+         <div>
+            <h4>pasirinkite pastomata</h4>
+            <select>
+            <option>sapiegos 12 kaunas</option>
+            <option>ligonines 14 klaipeda</option>
+            <option>konstitucijos pr. 118, vilnius</option>
+            </select>
+         </div>
+         <div>
+            <label>jusu zinute</label>
+            <textarea></textarea>
+         </div>
+         <div>
+            <button>siusti</button>
+         </div>
+    </form>    
+</body>
+</html>

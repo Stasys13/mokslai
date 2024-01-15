@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borders</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            margin: 20px 0;
+        }
+
+        .purple {
+            background-color: purple;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .blue {
+            background-color: tomato;
+        }
+
+        .tomato {
+            background-color: blue;
+        }
+        
+        .bordered {
+            border: 10px solid black;
+        }
+
+        .dashed {
+            /* Kraštinės aprašymas vienoje eilutėje */
+            /* border: 10px dashed black; */
+            /* Kraštinės reikšmių priskyrimas atskiromis savybėmis */
+            border-width: 10px;
+            border-style: dashed;
+            border-color: black;
+        }
+
+        .dotted {
+            border: 10px dotted black;
+        }
+
+        .border-image {
+            border-image: url(1.jpg);
+            /* border-image-width: 100%; */
+            /* border-image-repeat: repeat; */
+            border-width: 30px;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="box purple bordered"></div>
+    <div class="box orange dashed"></div>
+    <div class="box tomato dotted"></div>
+    <div class="box blue border-image"></div>
+</body>
+</html>

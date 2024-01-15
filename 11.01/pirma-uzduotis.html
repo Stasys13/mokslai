@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigation</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 30px;
+        }
+
+        nav a:hover {
+            color: blue;
+        }
+
+        nav a:active {
+            color: brown;
+        }
+
+        nav a:visited {
+            color: rgb(21, 21, 2);
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: antiquewhite;
+        }
+
+        section {
+            height: 800px;
+
+        }
+
+        #home {
+            background-image: url(fotkes/1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            padding-top: 60px;
+
+        }
+
+        #about {
+            background-image: url(fotkes/2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        #history {
+            background-image: url(fotkes/3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        #carrer {
+            background-image: url(fotkes/4.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        #contacts {
+            background-image: url(fotkes/8.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        #kompas {
+            background-image: url(fotkes/6.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        #kompas2 {
+            background-image: url(fotkes/7.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        #kompas3 {
+            background-image: url(fotkes/8.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        .left {
+            float: left;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        main {
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+        .right {
+            float: right;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .alternate {
+            flex-direction:row-reverse;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="fotkes/9.jpg" alt="logotipas" width="60">
+        <nav></nav>
+
+        <nav>
+            <ul>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#history">history</a></li>
+                <li><a href="#carrer">carrer</a></li>
+                <li><a href="#contacts">contacts</a></li>
+                <li><a href="#kompas">kompas</a></li>
+                <li><a href="#kompas2">kompas2</a></li>
+                <li><a href="#kompas3">kompas3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <div class="container">
+                <img src="fotkes/8.jpg">
+                <div class="text">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, pariatur!</h1>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            
+            home
+        </section>
+        <section id="about">
+            <div class="container alternate">
+                <div class="left">
+                    <img src="fotkes/7.jpg">
+                </div>
+                <div class="text">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, pariatur!</h1>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            about
+        </section>
+        <section id="history">
+            <div class="container">
+                <div class="right">
+                    <img src="fotkes/6.jpg">
+                </div>
+                <div class="text">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, pariatur!</h1>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            history
+        </section>
+        <section id="contacts">
+            <div class="container">
+                <div class="left">
+                    <img src="fotkes/5.jpg">
+                </div>
+                <div class="text">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, pariatur!</h1>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            contacts
+        </section>
+        <section id="kompas">
+            <div class="container">
+                <div class="right">
+                    <img src="fotkes/4.jpg">
+                </div>
+                <div class="text">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, pariatur!</h1>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            kompas
+        </section>
+        <section id="kompas2">
+            <div class="container">
+                <div class="left">
+                    <img src="fotkes/3.jpg">
+                </div>
+                <div class="text">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, pariatur!</h1>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            kompas2
+        </section>
+        <section id="kompas3">
+            <div class="container">
+                <div class="right">
+                    <img src="fotkes/2.jpg">
+                </div>
+                <div class="text">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, pariatur!</h1>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            kompas3
+        </section>
+        <section id="carrer">
+            <div class="container">
+                <div class="left">
+                    <img src="fotkes/1.jpg">
+                </div>
+                <div class="text">
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, pariatur!</h1>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            carrer
+        </section>
+    </main>
+
+</body>
+
+</html>
