@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .button {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            display: block;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            /* 1s = 1000ms */
+            /* pusė skundės 0.5s arba 500ms */
+            /* Pirmoji reikšmė: savybė kurią norime animuoti
+                Antroji: animacijos trukmė
+                Trečioji: animacijos tipas            
+            */
+            transition: background-color 500ms ease-in-out;
+        }
+
+        .button:hover {
+            background-color: red;
+        } 
+        
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+        }
+
+        .box {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            /* Norint nurodyti animaciją visoms besikeičiančioms savybėms */
+            /* transition: all 500ms ease-in-out; */
+            /* Norint nurodyti animaciją kelioms savybėms su skirtingais parametrais */
+            transition: background-color 500ms ease-in-out,
+                        width 1s ease-in-out, 
+                        height 2s ease-in-out,
+                        color 5s ease;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .box:hover {
+            background-color: darkred;
+            width: 500px;
+            height: 500px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="#" class="button">Užvesk pelę ant manęs</a>
+        <div class="box orange">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde saepe veritatis magnam repellat voluptas ratione illum odit sapiente, fugit culpa.</div>
+    </div>
+</body>
+</html>
