@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            height: 100px;
+        }
+
+        .logo {
+            /* width: 200px; */
+            /* flex-shrink: 1;
+            flex-grow: 0; */
+            flex: 0 1 50px;
+        }   
+
+        nav {
+            /* 
+                Flex grow savybė nurodo, kiek elementas turėtų paaugti kitų 
+                elementų atžvilgiu neužtenkant tėvinio elemento pločio
+                Flex shrink, kiek turėtų sumažėti
+                Flex basis nurodo elemento bazinį plotį užtenkant vietos
+            */
+            /* flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 80%; */
+            flex: 1 0 80%;
+            background-color: black;
+            /* Align self nurodo būtent to vieno elemento lygiavimą vertikalioje padėtyje */
+            align-self: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .boxes {
+            display: flex;
+            gap: 20px;
+            height: 200px;
+            background-color: black;
+            align-items: center;
+        }
+
+        .box {
+            background-color: aqua;
+            height: 100px;
+            width: 33.333333333%;
+        }
+
+        .top {
+            align-self: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Titulinis</a></li>
+                    <li><a href="#">Apie Mus</a></li>
+                    <li><a href="#">Kontaktai</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="boxes">
+        <div class="box"></div>
+        <div class="box top"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

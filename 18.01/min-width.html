@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min width</title>
+    <style>
+        .box {
+            height: 400px;
+            background-color: brown;
+        }
+
+        @media screen and (min-width: 768px) {
+            .box {
+                background-color: blue;
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            .box {
+                background-color: rgb(0, 255, 110);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

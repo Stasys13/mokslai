@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Web Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Poppins;
+        }
+
+        .container {
+            max-width: 1170px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .articles {
+            display: flex;
+            gap: 20px;
+        }
+
+        .article {
+            width: 25%;
+            height: 300px;
+            background-color: aqua;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .articles {
+                flex-wrap: wrap;
+            }
+
+            .article {
+                width: calc(50% - 10px);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .articles {
+                flex-direction: column;
+            }
+
+            .article {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="articles">
+            <div class="article">1</div>
+            <div class="article">2</div>
+            <div class="article">3</div>
+            <div class="article">4</div>
+        </div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptate praesentium sapiente ex harum, officia, ab molestias, fuga sint eveniet beatae. Molestiae alias excepturi fugit exercitationem veniam inventore numquam necessitatibus quae odit deleniti! At delectus cum qui nisi a amet odio similique earum magni architecto tempore hic, maiores labore dolorum id atque expedita repellat quod, ut numquam iste inventore? Eius veritatis expedita similique ad, hic facilis nemo deserunt sapiente laboriosam dignissimos magni ipsam facere sed labore! Magnam rerum nostrum, aliquam ratione exercitationem corrupti perferendis labore veritatis. Rem enim recusandae alias amet deserunt deleniti doloribus cumque voluptates consequuntur asperiores laudantium, nobis saepe architecto temporibus ratione aliquid reiciendis fugiat sed in sapiente officia sunt, sit consectetur illum! Sunt ullam vero nesciunt deleniti impedit molestias, laudantium excepturi quisquam animi natus suscipit, porro similique necessitatibus quis, fugiat tempore facere cupiditate? Nesciunt neque illum provident quo inventore? Amet laboriosam similique harum error eius sapiente sed velit! Accusamus saepe recusandae temporibus provident voluptatem. Modi cumque asperiores rem earum deleniti iusto voluptatem, nisi facilis iure totam dolore excepturi vel adipisci at! Non voluptates ratione iste officiis soluta, dolores ea eligendi placeat fugiat fugit aut aliquid pariatur corporis necessitatibus, possimus consequuntur nesciunt! Incidunt animi quos maiores labore soluta ex deleniti rem iure autem. Labore consequatur earum blanditiis. Perferendis rerum provident cum suscipit velit est exercitationem sunt sed neque quaerat impedit, ducimus, magnam temporibus! Quam doloribus aliquid deleniti maxime ut accusantium error amet cupiditate, animi atque, nulla alias consectetur? A vero ipsa illum, esse est ratione. Ullam perferendis repudiandae unde sit, sint cupiditate consectetur quaerat voluptate quam iusto voluptatem odio laboriosam reiciendis excepturi, numquam libero eligendi. Distinctio officia a dolorum provident quidem assumenda reiciendis cupiditate, odit rem nihil veniam asperiores quaerat aut sed tempore. Temporibus eaque totam, mollitia ex excepturi praesentium. Modi error perferendis possimus perspiciatis accusamus voluptates culpa similique, aliquam dicta eaque quas, dolor officiis vel reprehenderit corporis! Mollitia deleniti veniam molestias cumque provident doloribus ipsa sit itaque porro soluta dolor commodi quos sequi consectetur quis tempore illum, reiciendis perferendis quae. Et doloribus odit numquam quae. Porro nesciunt voluptate doloremque qui aliquid quas consectetur ut, excepturi, itaque reiciendis est vitae laboriosam eius vel ipsam? Nemo eveniet voluptatum, doloribus debitis veniam enim similique voluptatem assumenda voluptates neque ex numquam distinctio illo, eos provident fugit perferendis recusandae non tempora ducimus commodi? Sapiente, maxime inventore? Vel omnis officiis error nihil perferendis numquam? Voluptatum soluta repellendus odio earum quaerat officiis officia doloribus? Quisquam totam, laboriosam officia consectetur numquam beatae? Libero quaerat ratione ab earum, dolore quod assumenda ut quas eveniet iusto commodi aspernatur. Eum laboriosam minus maiores totam optio adipisci rem recusandae, quos necessitatibus doloremque facilis vel corporis et doloribus. Vero voluptatem, quam sequi ex porro dicta saepe facilis nostrum quis exercitationem, cumque debitis laborum autem deleniti voluptatibus soluta iste, ipsa neque repudiandae voluptatum perferendis? Ut at inventore itaque ducimus. Nihil debitis, veritatis vel ea esse molestias dolor laborum quas ullam, in asperiores tempore similique. Magnam quam officiis quia temporibus delectus et dignissimos excepturi a quis doloremque culpa, rerum earum debitis praesentium.
+    </div>
+</body>
+</html>

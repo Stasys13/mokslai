@@ -18,9 +18,14 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+img {
+    max-width: 100%;
+}
+
 .container {
-    max-width: 1140px;
+    max-width: 1170px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 .button {
@@ -86,16 +91,24 @@ header .container {
     align-items: center;
 }
 
-header .right {
-    display: flex;
-    gap: 30px;
+
+
+header label {
+    font-size: 38px;
+}
+
+header input[type="checkbox"] {
+    display: none;
+}
+
+header input[type="checkbox"]:checked + .nav-container {
+    left: 0;
 }
 
 header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
 }
 
 header nav a {
@@ -111,7 +124,9 @@ header nav a.active {
 
 header .user-links {
     display: flex;
-    gap: 25px;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 20px;
 }
 
 main {
@@ -127,10 +142,7 @@ section.home .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-section.home .text {
-    width: 50%;
+    flex-direction: column-reverse;
 }
 
 section.home h4 {
@@ -161,4 +173,45 @@ section.home .buttons {
     display: flex;
     gap: 25px;
     padding-top: 20px;
+}
+
+@media screen and (min-width: 1170px) {
+    header .nav-container {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    header nav ul {
+        display: flex;
+    }
+
+    header .user-links {
+        flex-direction: row;
+    }
+
+    header label {
+        display: none;
+    }
+
+    section.home .container {
+        flex-direction: row;
+    }
+
+    section.home .text {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1170px) {
+    header .nav-container {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        height: 100vh;
+        width: 250px;
+        background-color: white;  
+        transition: left .5s ease-in-out;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
+    }
 }

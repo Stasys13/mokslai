@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS kintamieji</title>
+    <style>
+        html {
+            /* Kintamieji yra paveldimi */
+            --kintamojo-pavadinimas: #165db9;
+            --atitraukimai: 0 20px;
+        }
+
+        h1 {
+            color: var(--kintamojo-pavadinimas);
+            padding: var(--atitraukimai);
+            --atitraukimai-is-isores: 10px 0;
+        }
+
+        button {
+            border: none;
+            background-color: var(--kintamojo-pavadinimas);
+            color: white;
+            /* Kintamasis nepaveldimas, nes jis nėra priskirtas prie tėvinio elemento */
+            margin: var(--atitraukimai-is-isores);
+        }
+
+        h2 {
+            color: var(--kintamojo-pavadinimas);
+            padding: var(--atitraukimai);
+        }
+
+        p {
+            color: var(--kintamojo-pavadinimas);
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, modi?</h1>
+    <button>Hello</button>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis enim voluptatem illo sed ab in ea possimus soluta dignissimos cumque.</p>
+</body>
+</html>

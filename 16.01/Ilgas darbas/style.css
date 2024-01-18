@@ -39,6 +39,7 @@ header {
     padding-top: 10px;
     background-color: #FFFFFF;
     position: fixed;
+    z-index: 10;
     box-shadow: 0px 4px 8px 9px #0000001a;
     width: 100%;
     
@@ -357,7 +358,7 @@ h5 small {
 }
 .inside {
     display: flex;
-    gap: 10px;
+    gap: 25px;
 }
 
 .tes {
@@ -368,6 +369,12 @@ h5 small {
     width: 50%;
     box-shadow: 1px 14px 13px 0px rgb(0 0 0 / 8%);
     padding: 30px;
+    position: relative;
+}
+.trikampis {
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 .galva {
    display: flex;
@@ -391,8 +398,54 @@ h5 small {
     font-weight: 500;
     color: #646464;
 }
-footer {
+.footer {
     background-color: #393E46;
     width: 100%;
     height: 400px;
 }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.logo h4 {
+    font-weight: 600;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+.peda {
+    display: flex;
+    /* align-items: center; */
+    padding: 80px 0px;
+    justify-content: space-between;
+}
+.peda1 {
+    width: 38%;
+}
+.peda1 h4 {
+    font-size: 14px;
+    font-weight: 400;
+    color: #F4F4F4;
+}
+.peda1 img {
+    color: white;
+}
+.peda2 {
+    color: #F4F4F4;
+   
+}
+.peda2 ul {
+    line-height: 32px;
+}
+.peda2 li {
+    list-style: none;
+}
+.peda2 h1 {
+    font-size: 18px;
+}
+.icons {
+    gap: 10px;
+    display: flex;
+}
+
+   
