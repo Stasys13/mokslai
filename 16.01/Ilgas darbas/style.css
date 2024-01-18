@@ -93,8 +93,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    border-radius: 5px;
+    /* border: 1px solid black;
+    border-radius: 5px; */
 }
 .play-foto a {
     text-decoration: none;
