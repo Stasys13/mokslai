@@ -447,5 +447,8 @@ h5 small {
     gap: 10px;
     display: flex;
 }
+@media  sreen and (max-width: 1170px) {
+    
+}
 
    
