@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #f2f4f8;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 100px auto 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 45px;
+        }
+
+        li {
+            width: 25%;
+            background-color: white;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 35px;
+            border-top-right-radius: 15px;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+            transition: all 500ms ease-in-out;
+        }
+
+        .image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .image::before {
+            content: "";
+            width: calc(100% + 12px);
+            height: calc(100% + 12px);
+            border: 2px solid transparent;
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            border-radius: 50%;
+        }
+
+        li:nth-child(1) .image {
+            background-color: #ffeeba;
+        }
+
+        li:nth-child(2) .image {
+            background-color: #b8f9d3;
+        }
+
+        li:nth-child(3) .image {
+            background-color: #ceb2fc;
+        }
+
+        li:nth-child(4) .image {
+            background-color: #dce9ff;
+        }
+
+        li:nth-child(1) .image::before {
+            border-color: #ffeeba;
+        }
+
+        li:nth-child(2) .image::before {
+            border-color: #b8f9d3;
+
+        }
+
+        li:nth-child(3) .image::before {
+            border-color: #ceb2fc;
+
+        }
+
+        li:nth-child(4) .image::before {
+            border-color: #dce9ff;
+        }
+
+        li:nth-child(1):hover {
+            background-color: #ffd861;
+            box-shadow: 0 20px 27px 6px rgb(167 131 0 / 28%);
+        }
+
+        li:nth-child(2):hover {
+            background-color: #97dcb4;
+            box-shadow: 0 20px 27px 6px rgba(4, 202, 54, 0.28);
+        }
+
+        li:nth-child(3):hover {
+            background-color: #b89be5;
+            box-shadow: 0 20px 27px 6px rgba(97, 4, 120, 0.28);
+        }
+
+        li:nth-child(4):hover {
+            background-color: #b6c7e4;
+            box-shadow: 0 20px 27px 6px rgba(2, 93, 129, 0.28);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li>
+                <div class="image">
+                    <img src="assets/images/1.svg" alt="">
+                </div>
+                <div class="title">Education</div>
+            </li>
+            <li>
+                <div class="image">
+                    <img src="assets/images/2.svg" alt="">
+                </div>
+                <div class="title">Credentialing</div>
+            </li>
+            <li>
+                <div class="image">
+                    <img src="assets/images/3.svg" alt="">
+                </div>
+                <div class="title">Wallet</div>
+            </li>
+            <li>
+                <div class="image">
+                    <img src="assets/images/4.svg" alt="">
+                </div>
+                <div class="title">Human Resources</div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
