@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Responsiveness</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="d-flex flex-column justify-content-between" style="height: 100vh;
+                                                                            position: fixed;
+                                                                            background: white;
+                                                                            padding: 26px 0px;
+                                                                            width: 77px;
+                                                                                        ">
+                <div class="d-flex flex-column justify-content-start align-items-center" style="gap:48px;">
+                    <div>
+                        <img src=" foto/Logo.png" alt="">
+                    </div>
+                    <div class="d-flex flex-column" style="gap:32px;">
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                fill="none">
+                                <rect x="1.5" y="1.5" width="7" height="7" rx="2.5" stroke="#2B3F6C" stroke-width="1.5" />
+                                <rect x="1.5" y="11.5" width="7" height="7" rx="2.5" stroke="#2B3F6C" stroke-width="1.5" />
+                                <rect x="11.5" y="1.5" width="7" height="7" rx="2.5" stroke="#2B3F6C" stroke-width="1.5" />
+                                <rect x="11.5" y="11.5" width="7" height="7" rx="2.5" stroke="#2B3F6C" stroke-width="1.5" />
+                            </svg>
+                        </a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="19" viewBox="0 0 22 19"
+                                fill="none">
+                                <rect x="1" y="1.5" width="20" height="16" rx="5" stroke="#2B3F6C" stroke-width="1.5" />
+                                <path d="M5 6.5L9.8 10.1C10.5111 10.6333 11.4889 10.6333 12.2 10.1L17 6.5" stroke="#2B3F6C"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20"
+                                fill="none">
+                                <circle cx="4" cy="4" r="4" transform="matrix(-1 0 0 1 12 1.5)" stroke="#2B3F6C"
+                                    stroke-width="1.5" />
+                                <path
+                                    d="M1 15.4347C1 14.5743 1.54085 13.8068 2.35109 13.5175V13.5175C6.00404 12.2128 9.99596 12.2128 13.6489 13.5175V13.5175C14.4591 13.8068 15 14.5743 15 15.4347V16.7502C15 17.9376 13.9483 18.8498 12.7728 18.6818L11.8184 18.5455C9.28565 18.1837 6.71435 18.1837 4.18162 18.5455L3.22721 18.6818C2.0517 18.8498 1 17.9376 1 16.7502V15.4347Z"
+                                    stroke="#2B3F6C" stroke-width="1.5" />
+                            </svg>
+                        </a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+                                fill="none">
+                                <path
+                                    d="M9 4.5C9 3.94772 8.55055 3.49356 8.00258 3.56242C6.77376 3.71683 5.59275 4.15513 4.55544 4.84824C3.23985 5.72729 2.21446 6.97672 1.60896 8.43853C1.00346 9.90034 0.845036 11.5089 1.15372 13.0607C1.4624 14.6126 2.22433 16.038 3.34315 17.1569C4.46197 18.2757 5.88743 19.0376 7.43928 19.3463C8.99113 19.655 10.5997 19.4965 12.0615 18.891C13.5233 18.2855 14.7727 17.2602 15.6518 15.9446C16.3449 14.9072 16.7832 13.7262 16.9376 12.4974C17.0064 11.9494 16.5523 11.5 16 11.5H10.5C9.67157 11.5 9 10.8284 9 10V4.5Z"
+                                    stroke="#2B3F6C" stroke-width="1.5" />
+                                <path
+                                    d="M12 2.5C12 1.94772 12.45 1.49268 12.9966 1.57131C13.5731 1.65423 14.1383 1.80896 14.6788 2.03284C15.5281 2.38463 16.2997 2.90024 16.9497 3.55025C17.5998 4.20026 18.1154 4.97194 18.4672 5.82122C18.691 6.36171 18.8458 6.9269 18.9287 7.50339C19.0073 8.05005 18.5523 8.5 18 8.5L13 8.5C12.4477 8.5 12 8.05228 12 7.5V2.5Z"
+                                    stroke="#2B3F6C" stroke-width="1.5" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <img class="avatar" src="foto/Avatar.png" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <h1>Leads</h1>
+            <div class="d-flex justify-content-between" >
+                <div class="search-wrapper">
+                    <div class="search1">
+                        <input class="search" type="text" placeholder="Type To Search">
+                    </div>
+                    <button type="button" class="btn btn-dark">All Leads <small style="text-align: center;">x</small></button>
+                </div>
+                <div>
+                    <img src="foto/Filter.png" alt="">
+                </div>
+            </div>
+            <table class="table  customers-table">
+                <thead>
+                    <tr>                        
+                        <th><input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked></th>
+                        <th>Name</th>
+                        <th>Company</th>
+                        <th>Expected Deal</th>
+                        <th>Pipeline Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>               
+                <tbody>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"checked></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"checked></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"checked></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"checked></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"checked></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"checked></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"checked></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"checked></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"checked></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+
+</html>
