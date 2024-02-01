@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzduotys</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); 
+}
+        // Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus (Jonas Jonaitis). Atspausdinti trumpesnį stringą.
+        // Pvz:
+        // Johnny Depp
+        // Rezultatas: Depp
+
+        document.write(`<h1>Pirma uzduotis</h1>`)
+    let vardas = `Jason`;
+    let pavarde = `Statham`;
+
+    
+
+    if (vardas.length > pavarde.length) {
+        document.write (`${pavarde}`);
+    } else if (vardas.length < pavarde.length)
+    {
+        document.write (`${vardas}`);
+    } else {
+        document.write (`Vienodo ilgio zodziai`)
+    }
+
+    document.write(`<h1>Antra uzduotis</h1>`)
+
+    // Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. Vardą atspausdinti tik didžiosiom raidėm, o pavardę tik mažosioms.
+    // Rezultatas: JOHNNY depp
+
+    document.write(`${vardas.toUpperCase()} ${pavarde.toLowerCase()}`)
+
+    document.write(`<h1>Trecia uzduotis</h1>`)
+
+
+    // Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš pirmų vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
+    // Rezultatas: JD 
+
+    let firstletters = vardas[0] + pavarde[0];
+
+    document.write(firstletters);    
+
+    document.write(`<h1>Ketvirta uzduotis</h1>`)
+
+    // Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš trijų paskutinių vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
+    // Rezultatas: NNYEPP
+
+    let lastletters = vardas.slice(-3) + pavarde.slice(-3);
+    document.write(lastletters)
+
+    document.write(`<h1>Penkta uzduotis</h1>`)
+
+    // Sukurti kintamąjį su stringu: “An American in Paris”. Jame visas “a” (didžiąsias ir mažąsias) pakeisti žvaigždutėm “*”.  Rezultatą atspausdinti.
+    // Rezultatas: *n *meric*n in P*ris
+
+
+    let american = `An American in Paris`
+    american = american.replaceAll(`A`, `*`);
+    american = american.replaceAll(`a`, `*`);
+    document.write(american);
+
+    document.write(`<h1>Sesta uzduotis</h1>`)
+
+    // Sukurti kintamąjį su stringu: “An American in Paris”. Suskaičiuoti visas “a” (didžiąsias ir mažąsias) raides. Rezultatą atspausdinti.
+    // Rezultatas: 4
+    console.log(american.length)
+    american1 =  american.replaceAll(`*`, ``); 
+    console.log(american1.length)
+
+    document.write(american.length - american1.length);
+
+    document.write(`<h1>Septinta uzduotis</h1>`)
+
+    // Sukurti kintamąjį su stringu: “An American in Paris”. Jame ištrinti visas balses. Rezultatą atspausdinti. Kodą pakartoti su stringais: “Breakfast at Tiffany's”, “2001: A Space Odyssey” ir “It's a Wonderful Life”.
+    // Rezultatas: n mrcn n Prs
+
+     american = `An American in Paris`
+     let bebalsiu = american.replace(/[eiaA]/g, ``)
+     document.write(`<p>${bebalsiu}</p>`);
+
+     let tiffany = `Breakfast at Tiffany's`
+     bebalsiu = tiffany.replace(/[eaiy]/g,``);
+     document.write(`<p>${bebalsiu}</p>`);
+
+     let space =  `2001: A Space Odysse`
+     bebalsiu = space.replace(/[AaeOy]/g,``);
+     document.write(`<p>${bebalsiu}</p>`);
+
+     let life = `It's a Wonderful Life`;
+     bebalsiu = life.replace(/[IaoeuiS]/g,``)
+     document.write(`<p>${bebalsiu}</p>`);
+
+     document.write(`<h1>Astunta uzduotis</h1>`)
+
+    //  Stringe, kurį generuoja toks kodas: `Star Wars: Episode ${rand(0,5)} ${rand(1,9)} - A New Hope`; Surasti ir atspausdinti epizodo numerį.
+    // Rezultatas: 5 9
+
+    let star = `Star Wars: Episode ${rand(0,5)} ${rand(1,9)} - A New Hope`;
+
+    document.write(star[19],star[21]);
+
+
+
+    document.write(`<h1>Devinta uzduotis</h1>`)
+
+    // Parašyti kodą, kuris generuotų atsitiktinį stringą iš lotyniškų mažųjų raidžių. Stringo ilgis 3 simboliai.
+    // Rezultatas: jkr
+
+     let = string = 'abcdefghijklmnopqrstuvwxyz';
+
+   
+     document.write(string[rand(0, string.length - 1)] + string[rand(0, string.length - 1)] + string[rand(0, string.length - 1)]);
+
+
+   
+    </script>
+</body>
+</html>

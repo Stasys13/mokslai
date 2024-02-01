@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Loop: Ciklas (Algoritmas) - Veiksmų kartojimas iki gausime norimą rezultatą
+
+        // Ciklų rūšys:
+        // Inkrementiniai
+        // Rekursiniai
+
+        // While ciklo aprašymas:
+        // while( kondicija ) {
+            
+        // }
+        
+        let i = 1; // Increment (inkrementas)
+        
+        while(i <= 100) {
+            // Interation - iteracija, viena ciklo rotacija
+            console.log(i + ' Interacija');
+
+            i++; // Inkremento padidinimas
+        }
+
+        // Sukurkite keturis kintamuosius ir ​rand()​ funkcija sugeneruokite jiems 
+        // reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. 
+        // (sprendimui masyvo nenaudoti).
+
+        i = 0;
+        let nuliai = 0;
+        let vienetai = 0;
+        let dvejetai = 0;
+
+        while(i < 4) {
+            let skaicius = rand(0, 2);
+
+            if(skaicius === 0)
+                nuliai++;
+
+            if(skaicius === 1)
+                vienetai++;
+
+            if(skaicius === 2)
+                dvejetai++;
+
+            i++;
+        }
+
+        console.log(`Nuliai: ${nuliai} Vienetai: ${vienetai} Dvejetai: ${dvejetai}`);
+
+        // Ruletės krupje suka ratą 100 kartų. Kiekvieno sukimo metu atvaizduokite iškritusį skaičių nuspalvintą atitinkamomis spalvomis:
+        // 0 - Žalias
+        // Nelyginis - Juodas
+        // Lyginis - Raudonas
+
+        i = 0;
+
+        while(i < 100) {
+            let skaicius = rand(0, 36);
+            
+            // Lyginio skaičiaus tikrinimas
+            if(skaicius % 2 === 0) {
+                if(skaicius === 0) {
+                    document.write(`<div style="color: green;">${skaicius}</div>`);
+                } else {
+                    document.write(`<div style="color: red;">${skaicius}</div>`);
+                }
+            } else {
+                document.write(`<div style="color: black;">${skaicius}</div>`);
+            }
+
+            i++;
+        }
+
+        // Ciklo aprašymas nežinant iteracijų kiekio
+        // Ciklą stabdome kai iškrenta skaičius 55. Kiekvienos iteracijos eigoje generuojame atsitiktinį skaičių nuo 0 iki 100 ir jį tikriname.
+
+        // 1. Pavyzdys, ciklas nestabdomas
+        // i = 0;
+
+        // while(i < 100000) {
+        //     let skaicius = rand(0, 100);
+
+        //     if(skaicius === 55) {
+        //         console.log('Rezultatas pasiektas');
+        //     }
+
+        //     i++;
+        // }
+
+        // 2. Pavyzdys ciklas stabdomas su kintamuoju
+        let veikia = true;
+        let kiekis = 0;
+
+        while(veikia) {
+            let skaicius = rand(0, 100);
+
+            if(skaicius === 55) {
+                console.log('Rezultatas pasiektas');
+                veikia = false;
+            }
+
+            kiekis++;
+        }
+
+        console.log(`Rezultatui pasiekti prireikė: ${kiekis} iteracijų`);
+
+        // 3. Pavyzdys ciklas stabdomas break komanda
+        kiekis = 0;
+
+        while(true) {
+            let skaicius = rand(0, 100);
+
+            if(skaicius === 55) {
+                console.log('Rezultatas pasiektas');
+                break; //Ciklo nutraukimo komanda
+                // break komanda taipogi nutraukia viso žemiau einančio kodo kompiliaciją
+            }
+
+            kiekis++;
+        }
+
+        console.log(`Rezultatui pasiekti prireikė: ${kiekis} iteracijų`);
+
+        // 4. Pavyzdys ciklo iteracijos praleidimas
+
+        i = 1;
+
+        while(i <= 10) {
+            i++;
+
+            if(i % 2 === 1) {
+                continue; //perėjimas į sekančią iteraciją
+                // continue komanda taipogi nutraukia viso žemiau einančio kodo kompiliaciją
+            }
+
+            console.log(`Gautas skaičius: ${i}`);
+        } 
+
+        // For ciklas
+
+        // Perduodamos trys reikšmės atskirtos kabliataškiais,
+        // Pirmoji - inkremento deklaravimas
+        // Antroji - kondicija kuomet ciklas turi baigtis
+        // Trečioji - kas nutinka su inkrementu
+        for(let i = 0; i < 100; i++) {
+            console.log('For Ciklas Sukasi, dabartinė iteracija: ' + i);
+        }
+
+        for(let i = 100; i > 0; i--) {
+            console.log('For Ciklas Sukasi, dekremento principu, dabartinė iteracija: ' + i);
+        }
+        
+        // Naršyklėje nupieškite linija iš 400 “*”. 
+        // Naudodami css stilių “suskaldykite” liniją taip, kad visos žvaigždutės matytųsi ekrane;
+        // Programiškai “suskaldykite” žvaigždutes taip, kad vienoje eilutėje nebūtų daugiau nei 50 “*”; 
+
+        // Dviejų ciklų sprendimas
+        // for(let i = 0; i < 8; i++) {
+        //     for(let x = 0; x < 50; x++) {
+        //         document.write('*');
+        //     }
+        //     document.write('<br />');
+        // }
+
+        // Vieno ciklo sprendimas
+        let rezultatas = '';
+
+        for(let i = 1; i <= 400; i++) {
+            rezultatas += '*';
+
+            if(i % 50 === 0) {
+                rezultatas += '<br />';
+            }
+        }
+
+        document.write(rezultatas);
+    </script> 
+</body>
+</html>
