@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+    <style>
+        .clock {
+            font-family: Arial;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .clock span::after {
+            content: ":";
+            padding-left: 10px;
+        }
+
+        .clock span:last-child::after {
+            content: "";
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        //Naudokite funkcija rand(). Sukurkite tris kintamuosius su atsitiktinėmis reikšmėmis nuo 0 iki 100. 
+        // Suskaičiuokite jų aritmetinį vidurkį. Ir aritmetinį vidurkį atmetus tas reikšmes, 
+        // kurios yra mažesnės nei 10 arba didesnės nei 90. Abu vidurkius atspausdinkite. 
+
+        let pirmas = rand(0, 100);
+        let antras = rand(0, 100);
+        let trecias = rand(0, 100);
+
+        console.log(pirmas, antras, trecias);
+
+        console.log(`Pirmas vidurkis: ${((pirmas + antras + trecias) / 3).toFixed(2)}`);
+
+        let suma = 0;
+        let kiekis = 0;
+
+        if(pirmas > 10 && pirmas < 90) {
+            suma += pirmas;
+            kiekis++;
+        } 
+
+        if(antras > 10 && antras < 90) {
+            suma += antras;
+            kiekis++;
+        } 
+
+        if(trecias > 10 && trecias < 90) {
+            suma += trecias;
+            kiekis++;
+        } 
+        
+        if(suma === 0 && kiekis === 0) {
+            console.log('Vidurkio nėra');
+        } else {
+            console.log(`Antras vidurkis: ${(suma / kiekis).toFixed(2)}`);
+        }
+
+        document.write('<h2>Laikrodis</h2>');
+        // Padarykite skaitmeninį laikrodį, rodantį valandas, minutes ir sekundes. 
+        // Valandom, minutėm ir sekundėm sugeneruoti panaudokite funkciją rand(). 
+        // Sugeneruokite skaičių nuo 0 iki 300. Tai papildomos sekundės. 
+        // Skaičių pridėkite prie jau sugeneruoto laiko. Atspausdinkite laikrodį prieš 
+        // ir po sekundžių pridėjimo ir pridedamų sekundžių skaičių.
+        
+        let hours = rand(0, 23);
+        let minutes = rand(0, 59);
+        let seconds = rand(0, 59);
+
+        document.write(`<div class="clock">
+                            <span>${hours}</span>
+                            <span>${minutes}</span>
+                            <span>${seconds}</span>
+                        </div>`);
+
+        document.write('<h2>Modifikuotas laikrodis</h2>');
+
+        let randomSeconds = rand(0, 300);
+        
+        // console.log(newMinutes);
+        // let naujosSeconds = 
+        let newSeconds = randomSeconds + seconds;
+        let addMinutes = Math.floor(newSeconds / 60);
+        if(newSeconds > 59) {
+            seconds = newSeconds - (addMinutes * 60); 
+        }
+
+        minutes = minutes + addMinutes;
+
+        if(minutes > 59) {
+            minutes = minutes - 60;
+            hours++;
+        }
+
+        if(hours >= 24) {
+            hours = 0;
+        }
+
+        console.log('Sekundės:' + randomSeconds);
+
+        document.write(`<div class="clock">
+                            <span>${hours}</span>
+                            <span>${minutes}</span>
+                            <span>${seconds}</span>
+                        </div>`);
+
+        // Naudokite funkcija rand(). Sugeneruokite 6 kintamuosius su atsitiktinem reikšmėm nuo 1000 iki 9999. Atspausdinkite reikšmes viename strige, 
+        // išrūšiuotas nuo didžiausios iki mažiausios, atskirtas tarpais.
+        // https://en.wikipedia.org/wiki/Bubble_sort
+        
+        console.log('-------Rūšiavimas------');
+
+        let first = rand(1000, 9999);
+        let second = rand(1000, 9999);
+        let third = rand(1000, 9999);
+        let fourth = rand(1000, 9999);
+        let fifth = rand(1000, 9999);
+        let sixth = rand(1000, 9999);
+
+        let temp = 0; //temporary (laikinas)
+
+        console.log(first, second, third, fourth, fifth, sixth);
+        
+        if(first > sixth) {
+            temp = first;
+            first = sixth;
+            sixth = temp;
+        }
+
+        if(second > sixth) {
+            temp = second;
+            second = sixth;
+            sixth = temp;
+        }
+
+        if(third > sixth) {
+            temp = third;
+            third = sixth;
+            sixth = temp;
+        }
+
+        if(fourth > sixth) {
+            temp = fourth;
+            fourth = sixth;
+            sixth = temp;
+        }
+
+        if(fifth > sixth) {
+            temp = fifth;
+            fifth = sixth;
+            sixth = temp;
+        }
+
+        if(first > fifth) {
+            temp = fifth;
+            fifth = first;
+            first = temp;
+        }
+
+        if(second > fifth) {
+            temp = fifth;
+            fifth = second;
+            second = temp;
+        }
+
+        if(third > fifth) {
+            temp = fifth;
+            fifth = third;
+            third = temp;
+        }
+
+        if(fourth > fifth) {
+            temp = fourth;
+            fourth = third;
+            third = temp;
+        }
+
+        if(first > fourth) {
+            temp = first;
+            first = fourth;
+            fourth = temp;
+        }
+
+        if(second > fourth) {
+            temp = second;
+            second = fourth;
+            fourth = temp;
+        }
+
+        if(third > fourth) {
+            temp = third;
+            third = fourth;
+            fourth = temp;
+        }
+
+        if(first > third) {
+            temp = first;
+            first = third;
+            third = temp;
+        }
+
+        if(second > third) {
+            temp = second;
+            second = third;
+            third = temp;
+        }
+
+        if(first > second) {
+            temp = first;
+            first = second;
+            second = temp;
+        }
+        
+        console.log(first, second, third, fourth, fifth, sixth);
+
+        
+        // Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, atspausdinkite juos atskirtus 
+        // tarpais ir suskaičiuokite kiek tarp jų yra didesnių už 150.  
+        // Skaičiai didesni nei 275 turi būti raudonos spalvos.
+        
+        let didesniNei150 = 0;
+        let html = '';
+
+        for(let i = 0; i < 300; i++) {
+            let skaicius = rand(0, 300);
+            
+            if(skaicius > 275) {
+                html += `<span style="color: red;">${skaicius}</span> `;
+            } else {
+                html += `<span>${skaicius}</span> `;
+            }
+
+            if(skaicius > 150) {
+                didesniNei150++;
+            }  
+        }
+
+        document.write(html);
+
+        console.log(didesniNei150);
+
+
+        document.write(`<h2>Kvadratas</h2>`);
+        
+        let size = 25;
+        let rezultatas = '<div style="line-height: 8px;">';
+
+        for(let y = 0; y < size; y++) {
+            // console.log('Eilute');
+            for(let x = 0; x < size; x++) {
+                if(x === y || x === size - y - 1) {
+                    rezultatas += '<span style="color: red;">*</span>';
+                } else {
+                    rezultatas += '*';
+                }
+            }
+
+            rezultatas += '<br>';
+        }
+
+        rezultatas += '</div>';
+
+        document.write(rezultatas);
+
+    </script>
+</body>
+</html>

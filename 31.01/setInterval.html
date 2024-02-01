@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body>
+    <!-- HTML elemento sukurimas -->
+    <div id="rezultatas"></div>
+    <script>
+        let kintamasis = 0;
+        // 1000 milisekundžių = 1 sekundė
+        let laikmatis = setInterval(function() {
+            // Norimi atlikti veiksmai
+            kintamasis++;
+            // Rezultato atvaizadavimas, panaikinant prieš tai buvusį turinį
+            document.getElementById('rezultatas').innerHTML = kintamasis;
+            // document.write(kintamasis);
+
+            if(kintamasis > 15) {
+                // Intervalo sustabdymas
+                clearInterval(laikmatis);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
