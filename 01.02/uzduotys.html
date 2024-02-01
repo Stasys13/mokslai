@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        document.write(`<h1>-------PIRMA UZDUOTIS------</h1>`);
+        // Naršyklėje atspausdinkite visus nelyginius skaičius nuo 7 iki 31.
+
+        for (let i = 8; i < 31; i++) {
+            if (i % 2 !== 0) {
+                document.write(i + ' ');
+            }
+        }
+
+
+
+        document.write(`<h1>-------ANTRA UZDUOTIS------</h1>`);
+
+        //         Aprašykite ciklą kuris naršyklėje atspausdintų skaičių didėjimo modelį iki dešimties. Rezultato pavyzdys:
+        // 1 
+        // 1 2 
+        // 1 2 3 
+        // 1 2 3 4 
+        // 1 2 3 4 5 
+        // 1 2 3 4 5 6 
+        // 1 2 3 4 5 6 7 
+        // 1 2 3 4 5 6 7 8 
+        // 1 2 3 4 5 6 7 8 9 
+        // 1 2 3 4 5 6 7 8 9 10
+
+        let start = ``;
+
+        for (let i = 1; i <= 10; i++) {
+            start = start + ` ` + i;
+            document.write(start + `<br/><br/>`);
+        }
+
+
+
+
+        document.write(`<h1>-------TRECIA UZDUOTIS------</h1>`);
+
+        // Jums duotas stringas: “Žalgiris, Anadolu Efes, Barcelona BC”. Pasinaudodami ciklų pagalba iš stringo ištraukite vieną atsitiktinį komandos pavadinimą. Rezultate kablelių ir tarpų neturi būti. 
+
+
+        let givenString = `Žalgiris, Anadolu Efes, Barcelona BC`;
+        let splittedStringArray = givenString.split(`, `);
+        console.log(splittedStringArray);
+        let randomNumber = rand(0, splittedStringArray.length - 1);
+        console.log(randomNumber);
+        let newString = ``;
+        console.log(newString);
+        for (let i = 0; i < splittedStringArray.length; i++) {
+           
+            if (i !== randomNumber) {
+                newString = newString + splittedStringArray[i] + ` `;
+            } console.log(newString);
+        }
+        document.write(newString);
+
+        document.write(`<h1>-------KETVIRTA UZDUOTIS------</h1>`);
+
+
+
+        //         Jums duotas stringas: “54 77 2 59 17 19 108”. Paimkite jame esančius skaičius ir patikrinkite juos ar jie yra pirminiai. T.y. ar natūralusis skaičius yra didesnis nei 1 ir be liekanos dalinasi tik iš savęs ir iš vieneto. 
+        // https://en.wikipedia.org/wiki/Prime_number 
+
+
+        let numberSrting = `54 77 2 59 17 19 108`;
+        let arrayOfStringNumbers = numberSrting.split(` `);
+        // let number = 77;
+        let numbersArray = []
+        for (let i = 0; i < arrayOfStringNumbers.length; i++) {
+            numbersArray.push(parseInt(arrayOfStringNumbers[i]));
+
+        }
+        let primeNumbers = [];
+        for (let i = 0; i < numbersArray.length; i++) {
+            let number = numbersArray[i];
+
+            if (number > 1 && number === 2) {
+                primeNumbers.push(number);
+
+            } else {
+                for (let ii = 2; ii <= number; ii++) {
+                    if (ii === number) {
+                        primeNumbers.push(number);
+
+                    }
+                    if (number % ii === 0) {
+                        break;
+                    }
+                }
+            }
+        }
+        document.write(primeNumbers.join(` `) + `<br/><br/>`);
+
+        document.write(`<h1>-------PENKTA UZDUOTIS------</h1>`);
+
+        // Jūs gavote užšifruotą žinutę: “gjrgkjxvbsigdvifpjqyzlzxsxzjnvgojlziaofdfnufymsjqsxxyknqcchmpepoljekhydgmfvhwipvopllndyuddcgxnleutsmprxqlcnxxthdhtpnutqocvtuanouumbkmlxexzmc”
+
+        // Surasti tai, kas joje yra paslėpta jums padės varlė. Ji tupi ežero krante, o kiekvieną raidė yra akmuo. Varlytė vienu šuoliu geba peršokti septynis akmenis. Su kiekvienu šuoliu priartėsite prie tikslo.
+        // Kas buvo paslėpta? 
+
+        let string = `gjrgkjxvbsigdvifpjqyzlzxsxzjnvgojlziaofdfnufymsjqsxxyknqcchmpepoljekhydgmfvhwipvopllndyuddcgxnleutsmprxqlcnxxthdhtpnutqocvtuanouumbkmlxexzmc`;
+        let riddleanswer = ``;
+
+        for (let i = 6; i < string.length; i++) {
+            if (i % 7 === 0) {
+                riddleanswer = riddleanswer + string[i];
+            }
+
+
+        }
+        document.write(riddleanswer);
+
+    </script>
+</body>
+
+</html>
