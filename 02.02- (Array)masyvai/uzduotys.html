@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array (masyvai)</title>
+</head>
+
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        document.write(`<h1>-------PIRMA UZDUOTIS ------</h1>`);
+
+        // Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
+
+        const randNumberArray = [];
+
+        for (let i = 0; i < 30; i++) {
+            randNumberArray.push(rand(5, 25))
+        }
+        document.write(randNumberArray);
+
+        document.write(`<h1>-------ANTRA  UZDUOTIS A ------</h1>`);
+
+        //         Naudodamiesi 1 uždavinio masyvu:
+        // Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
+
+
+
+        let kiekis = 0;     
+
+        for (let i = 0; i < randNumberArray.length; i++) {
+            if (randNumberArray[i] > 10)
+                kiekis++;
+        }
+        document.write(kiekis);
+
+
+        document.write(`<h1>-------ANTRA  UZDUOTIS B ------</h1>`);
+
+        // Raskite didžiausią masyvo reikšmę ir jos indeksą arba indeksus jeigu yra keli;
+
+
+        let index = [0];
+        let max = 0;
+        for(let i = 0; i < randNumberArray.length; i++) {
+            if(randNumberArray[i] > max) {
+                index = [0];
+                index[0] = i;
+                max = randNumberArray[i];
+                
+
+            } else if (randNumberArray[i] === max) {
+                index.push(i);
+
+            }
+        }
+        document.write(index);
+
+
+        document.write(`<h1>-------ANTRA  UZDUOTIS C ------</h1>`);
+        //Suskaičiuokite visų porinių (lyginių) indeksų reikšmių sumą;
+
+        let sum = 0;
+        for (let i = 0; i < randNumberArray.length; i++) {
+            if (i % 2 === 0) {
+                sum += randNumberArray[i];
+            }
+        }
+        document.write(`poriniu indexu reiksmiu suma = ${sum}`)
+       
+
+
+
+        document.write(`<h1>-------ANTRA  UZDUOTIS D ------</h1>`);
+        //Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
+
+               
+        const newArray = [];
+        for (let i = 0; i < randNumberArray.length; i++) {
+            newArray.push(randNumberArray[i] - i);
+        }
+        document.write(newArray);
+
+               document.write(`<h1>-------ANTRA  UZDUOTIS E ------</h1>`);
+       // Papildykite masyvą papildomais 10 elementų su reikšmėmis nuo 5 iki 25, kad bendras masyvas padidėtų iki indekso 39;
+
+       
+
+       for (let i = 0; i < 10; i++) {
+        randNumberArray.push(rand(5, 25))
+       }
+       document.write(randNumberArray);
+
+        document.write(`<h1>-------ANTRA  UZDUOTIS F ------</h1>`);
+        //Iš masyvo elementų sukurkite du naujus masyvus. Vienas turi būti sudarytas iš neporinių indeksų reikšmių, o kitas iš porinių;
+
+        const poriniai = [];
+        const neporiniai = [];
+
+        for (let i = 0; i < randNumberArray.length; i++) {
+           if( randNumberArray[i] % 2 === 0) {
+                poriniai.push(randNumberArray[i])
+           } else  {
+            neporiniai.push(randNumberArray[i]);
+           }
+        }
+        document.write(`Poriniai: ${poriniai}</br>`);
+        document.write(`Neporiniai: ${neporiniai}`);    
+
+        document.write(`<h1>-------ANTRA  UZDUOTIS G ------</h1>`);
+        //Pirminio masyvo elementus su poriniais indeksais padarykite lygius 0 jeigu jie didesni už 15;
+
+        for (let i = 0; i < randNumberArray.length; i++) {
+            if (i % 2 === 0 && randNumberArray[i] > 15) {
+                randNumberArray.splice(i, 1, 0)
+            }
+        }
+            document.write(randNumberArray);
+
+        document.write(`<h1>-------ANTRA  UZDUOTIS H ------</h1>`);
+        //Suraskite pirmą indeksą, kurio elemento reikšmė didesnė už 10;
+
+            for (let i = 0; i < randNumberArray.length; i++) {
+                if (randNumberArray[i] > 10 ) {
+                   
+                    document.write(i);
+                    break;
+                }
+            }
+
+        document.write(`<h1>-------ANTRA  UZDUOTIS I ------</h1>`);
+        //Iš masyvo ištrinkite visus elementus turinčius porinį indeksą;
+
+        for( let i = 0; i < randNumberArray.length; i++) {
+            
+            if(i % 2 === 0) {
+                randNumberArray.splice(i, 1, `a`);
+            }
+        } 
+        for( let i = 0; i < randNumberArray.length; i++) {
+            
+            if(randNumberArray[i] ===`a`) {
+                randNumberArray.splice( i, 1);
+            }
+        }
+        document.write( randNumberArray);
+
+        document.write(`<h1>-------TRECIA  UZDUOTIS  ------</h1>`);
+        document.write(`<h1>-------ANTRA  UZDUOTIS I ------</h1>`);
+        document.write(`<h1>-------ANTRA  UZDUOTIS I ------</h1>`);
+        document.write(`<h1>-------ANTRA  UZDUOTIS I ------</h1>`);
+        document.write(`<h1>-------ANTRA  UZDUOTIS I ------</h1>`);
+        document.write(`<h1>-------ANTRA  UZDUOTIS I ------</h1>`);
+        document.write(`<h1>-------ANTRA  UZDUOTIS I ------</h1>`);
+        document.write(`<h1>-------ANTRA  UZDUOTIS I ------</h1>`);
+        document.write(`<h1>-------ANTRA  UZDUOTIS I ------</h1>`);
+
+       
+
+
+
+    </script>
+</body>
+
+</html>

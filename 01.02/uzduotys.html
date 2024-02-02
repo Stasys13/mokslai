@@ -53,21 +53,29 @@
 
         // Jums duotas stringas: “Žalgiris, Anadolu Efes, Barcelona BC”. Pasinaudodami ciklų pagalba iš stringo ištraukite vieną atsitiktinį komandos pavadinimą. Rezultate kablelių ir tarpų neturi būti. 
 
-
-        let givenString = `Žalgiris, Anadolu Efes, Barcelona BC`;
-        let splittedStringArray = givenString.split(`, `);
-        console.log(splittedStringArray);
-        let randomNumber = rand(0, splittedStringArray.length - 1);
-        console.log(randomNumber);
+        let randomNumber = rand(0, 2);
+        let givenString = `Žalgiris, Anadolu Efes, Barcelona BC`;        
         let newString = ``;
-        console.log(newString);
-        for (let i = 0; i < splittedStringArray.length; i++) {
-           
-            if (i !== randomNumber) {
-                newString = newString + splittedStringArray[i] + ` `;
-            } console.log(newString);
+        let wordIndex = 0;
+
+        while(givenString.length > 0) {
+            if (givenString.substring(0, 2) !== `, ` && wordIndex !== randomNumber) {
+                newString = newString + givenString[0];
+            } 
+            if (givenString.substring(0, 2) === `, `) {
+                givenString = givenString.slice(1);
+                wordIndex++;
+            }
+            givenString = givenString.slice(1);
         }
         document.write(newString);
+        // for (let i = 0; i < splittedStringArray.length; i++) {
+
+        //     if (i !== randomNumber) {
+        //         newString = newString + splittedStringArray[i] + ` `;
+        //     } console.log(newString);
+        // }
+        // document.write(newString);
 
         document.write(`<h1>-------KETVIRTA UZDUOTIS------</h1>`);
 
@@ -78,33 +86,38 @@
 
 
         let numberSrting = `54 77 2 59 17 19 108`;
-        let arrayOfStringNumbers = numberSrting.split(` `);
+        let primeNumbers = ``;
+        let stringedNumber = ``;
+        // let arrayOfStringNumbers = numberSrting.split(` `);
         // let number = 77;
-        let numbersArray = []
-        for (let i = 0; i < arrayOfStringNumbers.length; i++) {
-            numbersArray.push(parseInt(arrayOfStringNumbers[i]));
+        // let numbersArray = []
+        // let tempstring = ``;
+        // for (let i = 0; i < arrayOfStringNumbers.length; i++) {
+        //     numbersArray.push(parseInt(arrayOfStringNumbers[i]));
 
-        }
-        let primeNumbers = [];
-        for (let i = 0; i < numbersArray.length; i++) {
-            let number = numbersArray[i];
-
-            if (number > 1 && number === 2) {
-                primeNumbers.push(number);
-
+        // }
+        while (numberSrting.length > 0) {
+            if (numberSrting[0] !== ` `) {
+                stringedNumber = stringedNumber + numberSrting[0];
             } else {
-                for (let ii = 2; ii <= number; ii++) {
-                    if (ii === number) {
-                        primeNumbers.push(number);
+                let number = parseInt(stringedNumber)
+                stringedNumber = ``;
 
-                    }
-                    if (number % ii === 0) {
-                        break;
+                if (number > 1 && number === 2) {
+                    primeNumbers = primeNumbers + number + ` `;
+                } else {
+                    for (let ii = 2; ii <= number; ii++) {
+                        if (ii === number) {
+                            primeNumbers = primeNumbers + number + ``;
+                        }
+                        if (number % ii === 0) {
+                            break;
+                        }
                     }
                 }
-            }
+            } numberSrting = numberSrting.slice(1);
         }
-        document.write(primeNumbers.join(` `) + `<br/><br/>`);
+        document.write(primeNumbers);
 
         document.write(`<h1>-------PENKTA UZDUOTIS------</h1>`);
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skaičių konvertavimas</title>
+</head>
+<body>
+    <script>
+        let skaicius = '8125.15';
+        
+        if(skaicius === 8125) {
+            console.log('Skaičiai vienodi');
+        }
+
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
+        // Konvertuoja sveiką skaičių
+        let rezultatas = parseInt(skaicius) + parseInt('15');
+        console.log(rezultatas);
+
+        let skaiciusPoKablelio = parseFloat(skaicius);
+        rezultatas = skaiciusPoKablelio + parseInt('15');
+        
+        console.log(rezultatas);
+        
+        // Pliusas nurodo stringo konversiją į skaičių. Sveiką arba po kablelio
+        rezultatas = +skaicius + +'15';
+
+        console.log(rezultatas);
+    </script>
+</body>
+</html>
