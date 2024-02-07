@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For in, For of</title>
+</head>
+<body>
+    <script>
+        // masyvo duomens tipas yra objektas
+        const masyvas = [10, 12, 5, 80, 3, 92];
+
+        // for(let i = 0; i < masyvas.length; i++) {
+        //     console.log(masyvas[i]);
+        // }
+        
+        console.log('---------------For Of Ciklas---------------------');
+
+        // Norint susigrąžinti masyve esančias reikšmes
+        // Kintamojo reiksme pavadinimas pasirinktinis
+        for(const reiksme of masyvas) {
+            console.log(reiksme);
+        }
+
+        console.log('---------------For In Ciklas---------------------');
+
+        // Norint susigrąžinti masyve esančius indeksus
+        for(const indeksas in masyvas) {
+            console.log(`Elemento indeksas ${indeksas} ir reikšmė ${masyvas[indeksas]}`);
+        }
+    </script>
+</body>
+</html>

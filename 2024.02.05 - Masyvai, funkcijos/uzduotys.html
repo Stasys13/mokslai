@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masyvai, funkcijos</title>
+</head>
+
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        document.write(`<h1>-------PIRMA   UZDUOTIS ------</h1>`);
+        // Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.
+
+        const letters = [`A`, `B`, `C`, `D`];
+        const lettersAll = [];
+        const sortedLetters = [];
+        let kiekis = [0, 0, 0, 0];
+
+        for (let i = 0; i < 200; i++) {
+            let randLetter = rand(0, 3)
+            lettersAll.push(letters[randLetter]);
+            if (lettersAll[i] === `A`) kiekis[0]++;
+            if (lettersAll[i] === `B`) kiekis[1]++;
+            if (lettersAll[i] === `C`) kiekis[2]++;
+            if (lettersAll[i] === `D`) kiekis[3]++;
+        }
+
+        document.writeln(lettersAll);
+        document.writeln(kiekis);
+
+        document.write(`<h1>-------ANTRA   UZDUOTIS ------</h1>`);
+        //Išrūšiuokite 7 uždavinio masyvą pagal abecėlę.
+
+        document.writeln(lettersAll.sort());
+
+
+
+        for (let i = 0; i < letters.length; i++) {
+            for (let j = 0; j < lettersAll.length; j++) {
+                if (letters[i] == lettersAll[j]) sortedLetters.push(lettersAll[j]);
+            }
+        }
+        document.writeln(sortedLetters);
+
+        document.write(`<h1>-------TRECIA   UZDUOTIS ------</h1>`);
+
+        //        Sugeneruokite 3 masyvus pagal 7 uždavinio sąlygą. Sudėkite masyvus, sudėdami reikšmes pagal atitinkamus indeksus. Paskaičiuokite kiek unikalių (po vieną, nesikartojančių) reikšmių ir kiek unikalių kombinacijų gavote.  
+        // Pvz.
+        // [‘AAA’, ‘BBB’, ‘CCC’, ‘ACC’] = Viena unikali reikšmė “ACC”
+        // [‘ACA’, ‘ABA’, ‘ACA’, ‘ADA’] = Dvi unikalios kombinacijos “ABA” ir “ADA”
+
+        const first = generateArray();
+        const second = generateArray();
+        const third = generateArray();
+        // let unique = 0;
+        
+
+        document.writeln(first);
+        document.writeln(second);
+        document.writeln(third);
+        document.write(`<br/>`);
+        document.write(`<br/>`);
+        document.write(`<br/>`);
+        console.log(first)
+        function generateArray() {
+            const array = [];
+            for (let i = 0; i < 200; i++) {
+                let decideLetters = rand(0, 3)
+                array.push(letters[decideLetters]);
+            }
+            return array;
+        }
+
+
+        const uniqueValue = [];
+        let uniqueAmount = 0;
+
+        document.write(`<h1>-------TRECIA   UZDUOTIS (A)------</h1>`);
+
+        // [‘ACA’, ‘ABA’, ‘ACA’, ‘ADA’] = Dvi unikalios kombinacijos “ABA” ir “ADA”
+
+        const threeLetters = [];
+
+        for(let i = 0; i < first.length; i++) {
+            threeLetters[i] = first[i] + second[i] + third[i];
+        }
+        document.writeln(threeLetters);
+        console.log(threeLetters.length)
+
+        for(let i = 0; i < threeLetters.length; i++) {
+            let temp = 0;
+            for(let j = 0; j < threeLetters.length; j++) {
+                if (threeLetters[i] === threeLetters[j]) temp++;
+            } 
+            if (temp ===1 ) {
+                uniqueValue.push(threeLetters[i])
+                uniqueAmount++;
+            }
+        }
+        document.writeln(uniqueValue);
+        document.writeln(uniqueAmount);
+
+        document.write(`<h1>-------TRECIA   UZDUOTIS (B)------</h1>`);
+
+         // [‘AAA’, ‘BBB’, ‘CCC’, ‘ACC’] = Viena unikali reikšmė “ACC”
+
+        
+
+        const  mixedArray = [...threeLetters];
+        console.log(threeLetters.length)
+
+        for( let i = 0; i < mixedArray.length; i++) {
+            if(mixedArray[i] === `AAA`) {
+                 mixedArray.splice(i, 1); 
+                 i--;
+                }
+                if(mixedArray[i] === `BBB`) {
+                 mixedArray.splice(i, 1); 
+                 i--;
+                }
+                if(mixedArray[i] === `CCC`) {
+                 mixedArray.splice(i, 1);
+                 i--; 
+                }
+                if(mixedArray[i] === `DDD`) {
+                 mixedArray.splice(i, 1);
+                 i--; 
+                }   
+
+        }
+
+
+
+       document.writeln(mixedArray);
+       document.writeln(mixedArray.length);
+       document.write(threeLetters.length)
+
+        
+
+
+        
+
+       
+
+
+
+    </script>
+</body>
+
+</html>

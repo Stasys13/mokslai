@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcijos #2</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        const stringoGeneravimas = function(ilgis) {
+            // Parametrai priimami tarp skliaustelių
+            const string = 'abcdefghijklmnopqrstuvwxyz';
+            let result = '';
+            
+            for(let i = 0; i < ilgis; i++) {
+                result += string[rand(0, string.length - 1)];
+            }
+
+            //ghadk
+            return result;
+        }
+
+        // Argumentai perduodami iššaukiant funkciją
+        const stringas1 = stringoGeneravimas(5);
+        const stringas2 = stringoGeneravimas(5);
+
+        document.write(`<p>${stringas1.toUpperCase()}</p>`);
+        document.write(`<p>${stringas2.toLowerCase()}</p>`);
+        
+
+        // Duomenų ištraukimas iš masyvo (Spread syntax)
+        const masyvas = [10, 20, 30, 40];
+
+        console.log(...masyvas);
+        
+
+        //Duomenų sukėlimas į masyvą (Spread syntax)
+        function push(...parametrai) {
+            console.log(parametrai)
+        }
+
+        push(10, 20, 30, 40, 10, 15, 60);
+    </script>
+</body>
+</html>

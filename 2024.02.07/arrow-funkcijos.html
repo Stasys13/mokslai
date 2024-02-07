@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Funkcijos</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Funkcijos deklaravimas su pavadinimu
+        // function funkcijosPavadinimas(parametras, parametras2) {
+
+        // }
+
+        //Funkcijos priskyrimas prie kintamojo
+        // const funkcijosPavadinimas = function(parametras, parametras2) {
+
+        // }
+        
+        // Arrow funkcijos priskyrimas prie kintamojo
+
+        const sum = (pirma, antra) => {
+            // Tikrinimas ar parametrai yra perduoti
+            if(!pirma || !antra)
+                return;
+
+            return pirma + antra;
+        }
+
+        console.log(sum(15, 25));
+
+        // Jeigu atliekamas tik vienos eilutės veiksmas arrow funkcijoje riestiniai skliaustai 
+        // ir return komanda nėra būtina 
+        const divide = (pirma, antra) => pirma / antra;
+
+        console.log(divide(10, 2));
+
+        // Į funkciją perduotų parametrų patikrinimas
+
+        const formatNumbers = (number) => {
+            if(typeof number !== 'number')
+                return;
+
+            return number.toFixed(2);
+        }
+
+        console.log(formatNumbers());
+
+        console.log('Veikia');
+
+        // Callback (Atsišaukimo) principas
+
+        // const formatavimas = (masyvas, callback) => {
+        //     for(const reiksme of masyvas) {
+        //         callback(reiksme);
+        //     }
+        // }
+
+        // const masyvas = [5, 18, 20, 25, 8, 6];
+        
+        // formatavimas(masyvas, function(reiksme) {
+        //     if(reiksme > 10) {
+        //         document.write(`<p style="color: red;">${reiksme}</p>`);
+        //     } else {
+        //         document.write(`<p">${reiksme}</p>`);
+        //     }
+        // });
+
+        // forEach() metodas
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+        
+        const masyvas = [5, 18, 20, 25, 8, 6];
+        
+        // forEach metodas nieko negrąžina
+        masyvas.forEach(function(reiksme, indeksas) {
+            if(reiksme > 10) {
+                document.write(`<p style="color: red;">${reiksme}</p>`);
+            } else {
+                document.write(`<p">${reiksme}</p>`);
+            }
+        });
+
+        // Suformuokite naują masyvą pasinaudodami pirmuoju jo reikšmes padauginant iš indekso
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
+        // const naujasMasyvas = [];
+
+        // for(let i = 0; i < masyvas.length; i++) {
+        //     naujasMasyvas.push(masyvas[i] * i);
+        // }
+
+        // console.log(naujasMasyvas);
+
+        // map() metodas skirtas sugeneruoti naują masyvą callback funkcijoje nurodant reikšmęs
+        const naujasMasyvas = masyvas.map((reiksme, indeksas) => reiksme * indeksas);
+
+        console.log(naujasMasyvas);
+        
+        // Suformuokite naują masyvą pasinaudodami pirmuoju palikdami tik reikšmes kurios didesnės nei 10
+        // Jeigu arrow funkcijoje priimame tik vieną parametrą skliausteliai nebūtini
+        // filter() metodo callback funkcijoje nurodome true arba false atsakymą
+        const filtruotasMasyvas = masyvas.filter(reiksme => reiksme > 10);
+        
+        console.log(filtruotasMasyvas.length);
+
+        console.log(`Reikšmės didesnės nei 10: ${filtruotasMasyvas}`);
+
+        // Norint susirasti pirmą masyvo reikšmę kuri yra didesnė nei 10
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+
+        const iekotasMasyvas = masyvas.find(reiksme => reiksme > 10);
+
+        console.log(`Pirma reikšmė didesnė nei 10: ${iekotasMasyvas}`);
+
+        // Norint susirasti pirmą indeksą pagal kondiciją
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+            
+        const indeksas = masyvas.findIndex(reiksme => reiksme > 10);
+
+        console.log(`Pirmo skaičiaus didesnio nei 10 indeksas ${indeksas}`);
+
+        
+    </script>
+</body>
+</html>

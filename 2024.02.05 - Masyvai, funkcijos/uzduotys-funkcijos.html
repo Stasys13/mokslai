@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funkcijos</title>
+</head>
+
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        document.write(`<h1>-------PIRMA   UZDUOTIS ------</h1>`);
+
+        //Parašykite funkciją, kurios argumentas būtų tekstas, kuris yra įterpiamas į h1 elementą ir rezultatas būtų grąžinamas iš jos.
+
+        vardis = `As Stasys`
+
+        addtextToH1(vardis);
+
+        function addtextToH1(text) {
+            document.write(`<h1>` + text + `</h1>`);
+        }
+
+        document.write(`<h1>-------ANTRA   UZDUOTIS ------</h1>`);
+
+
+        //Parašykite funkciją su dviem argumentais, pirmas argumentas tekstas, įterpiamas į h HTML elementą, o antrasis elemento numeris (1-6). Rašydami šią funkciją remkitės pirmąjame uždavinyje parašyta funkcija.
+
+
+        addMoreTextToH1(vardis, rand(1, 6));
+
+        function addMoreTextToH1(text, number) {
+            document.write("<h1>" + text + " and " + number + "</h1>")
+        }
+
+
+        document.write(`<h1>-------TRECIA   UZDUOTIS ------</h1>`);
+
+       // Generuokite atsitiktinį stringą, pasinaudodami kodu btoa(Date.now()). Visas didžiąsias raides stringe įdėkite į h1 elementą. Likusių simbolių neimkite. Jeigu iš eilės eina kelios didžiosios raidės, jas į elementą reikia dėti kartu (h1 atsidaro prieš pirmosios ir užsidaro po paskutinės). Keitimui galite panaudoti patobulintą pirmo uždavinio funkciją ir replaceAll() metodą.
+
+    //    newText = btoa(Date.now())
+    //    buffer = [];
+    //    regex = /[A-Z]+/g;
+
+    //    for(let i = 0; i < newText; i++) {
+    //     if (newText[i].test(/[A-Z]+/g)) {
+    //         buffer.push(newText[i])
+    //     } 
+    //     else if (buffer.length)
+    //    }
+
+    //    document.write(newText);
+   
+
+
+    </script>
+</body>
+
+</html>
