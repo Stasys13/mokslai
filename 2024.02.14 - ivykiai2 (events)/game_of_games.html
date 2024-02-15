@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game of games</title>
+    <style>
+        body {
+            margin: 50px auto;
+        }
+
+        .bendras {
+            display: flex;
+        }
+
+        .rezultatas {
+            padding-left: 50px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 800px;
+            height: 600px;
+            background-color: black;
+            position: relative;
+            margin: 0 auto;
+
+
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .pradzia {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        button {
+            background-color: red;
+            color: white;
+            padding: 1rem 2rem;
+        }
+
+        .time {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bendras">
+        <div class="rezultatas">Rezultatas
+            <div class="result1"></div>
+        </div>
+        <div class="container">
+            <!-- <div class="pradzia">
+            <h1>Sveiki atvyke</h1>
+            <button>Pradeti</button>
+        </div> -->
+            <div class="box"></div>
+            <div class="time"></div>
+        </div>
+    </div>
+
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        const box = document.querySelector(`.box`);
+        let posTop = 0;
+        let posLeft = 0;
+        let time = 0;
+        let playerScore = 0;
+        let round = 0;
+        let limit = 3;
+        let gameWinner = '';
+
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        document.querySelector('.box').addEventListener('click', (e) => {
+            playerScore++;
+        });
+
+
+       
+        let intervalId = setInterval(() => {
+            if (time === limit) {
+                let computerScore = limit - playerScore;
+                time = 0;
+
+                round++
+               
+                // roundResult = 0;
+                // playerScore = 0;
+                // const roundResult = computerScore - playerScore;
+                // const roundResult1 = computerScore - playerScore; 
+
+                if (playerScore > computerScore) {
+                    document.querySelector(".result1").innerHTML += `<div>Round ${round} laimejo zaidejas: ${playerScore}</div>`;
+                } else if (computerScore > playerScore) {
+                    document.querySelector(".result1").innerHTML += `<div>Round ${round} laimejo kompiuteris: ${computerScore}</div>`;
+                } else {
+                    document.querySelector(".result1").innerHTML += `<p>lygiosios</p>`;
+                }
+                playerScore = 0;
+
+                console.log('baig');
+                if (round === 2) {
+                    clearInterval(intervalId);
+                // zaidimo pabaiga
+                if (computerScore > playerScore) {
+                    gameWinner = 'Kompiuteris';
+                } else if (computerScore < playerScore) {
+                    gameWinner = 'Žaidėjas';
+                } else {
+                    document.querySelector('.bendras').innerHTML =
+                        `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px">
+            <h1>Žaidimas baigėsi lygiosiomis</h1>
+            <button class="reset" onClick="window.location.reload()">Bandykite dar kartą</button>
+        </div>`;
+                }
+                document.querySelector('.bendras').innerHTML =
+                    `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px">
+        <h1>Žaidimą laimėjo ${gameWinner}, laimėjęs ${round} roundus</h1>
+        <button class="reset" onClick="window.location.reload()">Bandykite dar kartą</button>
+    </div>`;
+                }
+
+            }
+
+            posTop = rand(50, 550);
+            posLeft = rand(50, 550);
+            box.style.top = `${posTop}px`;
+            box.style.left = `${posLeft}px`;
+            box.style.backgroundColor = `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)} )`
+
+            time++;
+              document.querySelector(`.time`).innerHTML = time;
+        }, 1000);
+      
+
+
+
+
+
+        console.log(time)
+
+
+
+
+    </script>
+</body>
+
+</html>

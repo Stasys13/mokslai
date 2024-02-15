@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        ul {
+            background-color: tomato;
+            color: white;
+        }
+
+        ul.special {
+            background-color: aqua;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="tekstas">An American in Paris.</div>
+    <header>
+        <div class="container">
+            <ul>
+                <li>Pirmas</li>
+                <li>Antras</li>
+                <li>Trečias</li>
+            </ul>
+            <ul>
+                <li>Prisijungimas</li>
+                <li>Registracija</li>
+            </ul>
+        </div>
+    </header>
+    <script>
+        // DOM - Document Object Model
+        // document yra globalus kintamasis su dom objekto informacija
+        console.log(document);
+
+        // Bazinis DOM pavyzdys
+        // const dom = {
+        //     html: {
+        //         lang: "en",
+        //         head: {
+        //             meta: {
+        //                 charset: "UTF-8"
+        //             },
+        //             title: {
+        //                 value: "DOM"
+        //             }
+        //         },
+        //         body: {
+        //             value: ""
+        //         }
+        //     }
+        // }
+
+        // DOKUMENTO PAVADINIMO PRISKYRIMAS
+        
+        document.title = 'Dokumento objekto modelis';
+
+        // TEKSTO ESANČIO ELEMENTE PAĖMIMAS NAUDOJANT getElementById() netodą
+        // console.log(document.getElementById('tekstas').textContent);
+
+        // const tekstas = document.getElementById('tekstas').textContent;
+        // console.log(tekstas);
+        // document.getElementById('tekstas').textContent = tekstas.replaceAll(/a/gi, '*');
+        
+        // SURASTO ELEMENTO MODELIO PRISKYRIMAS PRIE KINTAMOJO 
+        const tekstas = document.getElementById('tekstas');
+        tekstas.textContent = tekstas.textContent.replaceAll(/a/gi, '*');
+        
+        // QUERY SELECTOR PANAUDOJIMAS NAUDOJANT CSS SELEKTORIUS
+        // querySelector() metodas grąžina vieną patį pirmą rastą elementą pagal selektorių
+        const ul = document.querySelector('header div.container ul:nth-child(2)');
+        
+        // KLASĖS PRISKYRIMAS PRIE SURASTO ELEMENTO
+        ul.classList.add('special');
+
+        // KLASĖS PATIKRINIMAS AR JI PRISKIRTA PRIE ELEMENTO
+        console.log(ul.classList.contains('special'));
+
+        // KLASĖS PAŠALINIMAS
+
+        ul.classList.remove('special');
+
+        // VISŲ ELEMENTŲ SUSIGRĄŽINIMAS NAUDOJANT querySelectorAll() metodą
+        const ulList = document.querySelectorAll('header div.container ul');
+        ulList.forEach((el) => el.classList.add('special'));
+
+        // TEXTCONTENT SAVYBĖ ATSPAUSDINA TIK TEKSTĄ, HTML TURINIO NEGENERUOJA
+        // document.querySelector('div.container').textContent = '<h1>Hello World</h1>';
+
+        // NAUJO TURINIO PRISKYRIMAS PRIE ELEMENTO
+        // console.log(document.querySelector('div.container').innerHTML);
+        // document.querySelector('div.container').innerHTML = '<h1>Hello World</h1>';
+
+        document.querySelector('div.container').innerHTML += '<h1>Hello World</h1>';
+
+        const words = ['Titulinis', 'Apie Mus', 'Kontaktai', 'Istorija', 'Nuorodos'];
+        
+        let html = '<ul class="special">';
+        
+        words.forEach(value => html += `<li>${value}</li>`);
+        
+        html += '</ul>';
+
+        console.log(html);
+
+        document.querySelector('div.container').innerHTML += html;
+    </script>
+</body>
+</html>

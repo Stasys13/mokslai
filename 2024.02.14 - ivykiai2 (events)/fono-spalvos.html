@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fono Spalvos</title>
+    <style>
+        .bgBlue {
+            background-color: blue;
+        }
+        .bgRed {
+            background-color: red;
+        }
+        .bgWhite {
+            background-color: white;
+        }
+
+        body {
+            transition: all 500ms ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        PIRMOSIOS IR ANTROSIOS VARIACIJOS MYGTUKAI
+        <button class="blue">Blue</button>
+        <button class="red">Red</button>
+        <button class="white">White</button> 
+    -->
+
+    <!-- 
+        TREČIOSIOS VARIACIJOS PAVYZDYS
+        <button>Blue</button>
+        <button>Red</button>
+        <button>White</button>  
+    -->
+
+    <button onclick="changeBackground(event)">Blue</button>
+    <button onclick="changeBackground(event)">Red</button>
+    <button onclick="changeBackground(event)">White</button>  
+
+    <script>
+        // PIRMOJI VARIACIJA SU KLASĖMIS
+        // document.querySelector('.blue').addEventListener('click', () => {
+        //     document.querySelector('body').classList.remove('bgRed', 'bgWhite');
+        //     document.querySelector('body').classList.add('bgBlue');
+        // });
+
+        // document.querySelector('.red').addEventListener('click', () => {
+        //     document.querySelector('body').classList.remove('bgBlue', 'bgWhite');
+        //     document.querySelector('body').classList.add('bgRed');
+        // });
+
+        // document.querySelector('.white').addEventListener('click', () => {
+        //     document.querySelector('body').classList.add('bgWhite');
+        // });
+
+
+        // ANTROJI VARIACIJA SU INLINE CSS STILIUMI
+        // document.querySelector('.blue').addEventListener('click', () => {
+        //     document.querySelector('body').style.backgroundColor = 'blue';
+        // });
+        // document.querySelector('.red').addEventListener('click', () => {
+        //     document.querySelector('body').style.backgroundColor = 'red';
+        // });
+        // document.querySelector('.white').addEventListener('click', () => {
+        //     document.querySelector('body').style.backgroundColor = 'white';
+        // });
+
+        // TREČIOJI VARIACIJA
+        // document.querySelectorAll('button').forEach(el => {
+        //     el.addEventListener('click', () => {
+        //         document.querySelector('body').style.backgroundColor = el.textContent.toLowerCase()
+        //     });
+        // });
+
+        // KETVIRTOJI VARIACIJA
+        // const changeBackground = (e) => {
+        //     document.querySelector('body').style.backgroundColor = e.target.textContent.toLowerCase()
+        // }
+        
+        // PENKTOJI VARIACIJA - SPALVOS PAŠALINIMAS PASPAUDUS ANTRĄ KARTĄ (TOGGLE)
+        // const changeBackground = (e) => {
+        //     const body = document.querySelector('body');
+            
+        //     if(body.style.backgroundColor === e.target.textContent.toLowerCase()) {
+        //         body.style.backgroundColor = ''
+        //     } else {
+        //         body.style.backgroundColor = e.target.textContent.toLowerCase()
+        //     }
+        // }
+
+        // PENKTOJI VARIACIJA - SPALVOS PAŠALINIMAS PASPAUDUS ANTRĄ KARTĄ (TOGGLE)
+        let active = false;
+
+        const changeBackground = (e) => {
+            const body = document.querySelector('body');
+
+            if(active) 
+                return;
+
+            active = true;
+
+            setTimeout(() => {
+                // Kodas kuris aktyvuosis po vienos sekundės
+                if(body.style.backgroundColor === e.target.textContent.toLowerCase()) {
+                    body.style.backgroundColor = ''
+                } else {
+                    body.style.backgroundColor = e.target.textContent.toLowerCase()
+                }
+
+                active = false;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

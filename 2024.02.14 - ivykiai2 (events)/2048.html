@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .game { 
+            width: 500px;
+            background-color: rgb(159, 148, 126);
+            margin: 50px auto;
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .game div {
+            background-color: rgb(177, 164, 144);
+            width: 100%;
+            height: 110px;
+            color: rgb(66, 61, 46);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            font-weight: bold;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .game .digit_color_2 {
+            background-color: rgb(229, 217, 200);
+        }
+
+        .game .digit_color_4 {
+            background-color: rgb(225, 221, 184);
+        }
+
+        .game .digit_color_8 {
+            background-color: rgb(225, 180, 129);
+            color: white;
+        }
+
+        .game .digit_color_16 {
+            background-color: rgb(215, 131, 47);
+            color: white;
+        }
+
+        .game .digit_color_32 {
+            background-color: rgb(224, 110, 22);
+            color: white;
+        }
+
+        .game .digit_color_64 {
+            background-color: rgb(224, 66, 22);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="game"></div>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        const game = document.querySelector('.game');
+        const digits = [0, 2, 4, 8, 16, 32, 64];
+        const blocks = [];
+
+        for(let i = 0; i < 16; i++) {
+            blocks[i] = digits[rand(0, digits.length - 1)];
+        }
+    
+        for(const digit of blocks) {
+            // if(digit === 0) { 
+            //     game.innerHTML += `<div></div>`;
+            // }
+            // if(digit === 2) { 
+            //     game.innerHTML += `<div class="digit_color_2">${digit}</div>`;
+            // }
+            // if(digit === 4) { 
+            //     game.innerHTML += `<div class="four">${digit}</div>`;
+            // }
+            // if(digit === 8) { 
+            //     game.innerHTML += `<div class="eight">${digit}</div>`;
+            // }
+            // if(digit === 16) { 
+            //     game.innerHTML += `<div class="sixteen">${digit}</div>`;
+            // }
+            // if(digit === 32) { 
+            //     game.innerHTML += `<div class="thirtytwo">${digit}</div>`;
+            // }
+            // if(digit === 64) { 
+            //     game.innerHTML += `<div class="sixtyfour">${digit}</div>`;
+            // }
+                
+            game.innerHTML += `<div class="digit_color_${digit}">${digit === 0 ? '' : digit}</div>`;
+        }
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objektai</title>
+</head>
+<body>
+    <script>
+        // OBJEKTO SUKŪRIMAS
+        // const objektas = {};
+
+        // console.log(typeof objektas);
+
+        // INDEKSO PRISKYRIMAS MASYVE
+
+        // const masyvas = [];
+        
+        // masyvas[0] = 'Reikšmė';
+
+        // masyvas['indeksas'] = 'reikšmė';
+
+        // MASYVO ILGIO NEATITIKIMAS
+        // console.log(masyvas.length);
+
+        // NEPAVYKĘS CIKLAS
+        // masyvas.map(value => console.log(value));
+        
+
+        // OBJEKTO SUKŪRIMAS SU REIKŠMĖMIS
+        // objekte indeksas vadinsis key
+        const objektas = {
+            // Objekte esanti reikšmė, kuri nėra funkcija, vadinasi SAVYBĖMIS (properties) 
+            raktazodis: 'Reikšmė',
+            skaicius: 10,
+            // Objekte patalpinta funkcija vadinasi metodas (method)
+            funkcija: function() {
+                return 'Labas pasauli';
+            }
+        };  
+
+        // OBJEKTO ATVAIZDAVIMAS
+        console.log(objektas);
+
+        // REIKŠMĖS PAĖMIMAS IŠ OPBJEKTO
+        console.log(objektas.skaicius);
+
+        // NAUJOS REIKŠMĖS PRISKYRIMAS OBJEKTE
+        objektas.skaicius = 25;
+        console.log(objektas.skaicius);
+
+        // MASYVO KŪRIMAS OBJEKTE
+        objektas.masyvas = [10, 25, 35];
+
+        console.log(objektas);
+
+        // METODO IŠŠAUKIMAS IŠ OBJEKTO:
+        console.log(objektas.funkcija());
+
+        // KREIKIPĄSIS Į NEEGZISTUOJANČIĄ SAVYBĘ
+        console.log(objektas.boolean);
+
+        // TRYNIMAS IŠ OBJEKTO
+        delete objektas.skaicius;
+
+        console.log(objektas);
+
+        // NAUJO TUŠČIO OBJEKTO SUKŪRIMAS
+        const naujasObjektas = {};
+        
+        naujasObjektas.savybe = 88;
+        
+        console.log(naujasObjektas);
+
+        // REIKŠMĖS KEITIMAS NAUDOJANT LAUŽTINIUS SKLIAUSTUS
+        naujasObjektas['savybe'] = 77;
+
+        // REIKŠMĖS PAĖMIMAS NAUDOJANT LAUŽTINIUS SKLIAUSTUS
+        console.log(naujasObjektas['savybe']);
+        
+        // PAVYZDYS KAIP PAIMTI REIKŠMĘ IŠ OBJEKTO PANAUDOJANT KINTAMOJO REIKŠMĘ
+        naujasObjektas.skaicius = 99;
+        
+        console.log(naujasObjektas);
+
+        const raktazodis = 'skaicius';
+
+        console.log(naujasObjektas[raktazodis]);
+
+        // Objekto iteravimas
+        // const objektasKonvertuotasIMasyva = Object.entries(naujasObjektas);
+
+        // for(let i = 0; i < objektasKonvertuotasIMasyva.length; i++) {
+        //     console.log(objektasKonvertuotasIMasyva[i]);
+        // }
+
+        console.log('REIKŠMĖS PAĖMIMAS NAUDOJANT FOR IN CIKLĄ');
+        for(const key in naujasObjektas) {
+            console.log(naujasObjektas[key]);
+        }
+        
+        // FOR OF Ciklas neskirtas objektams
+        // Uncaught TypeError: naujasObjektas is not iterable
+        for(const value of naujasObjektas) {
+            console.log(value);
+        }
+    </script>    
+</body>
+</html>

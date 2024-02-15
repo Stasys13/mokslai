@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daugiamačiai (Multidimentional array)</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // const array = [10, 'Stringas', false, undefined, null, function() {}, []];
+        
+        // Statinėmis pozicijomis kuriamas daugiamatis masyvas
+        // const array = [];
+        // array[0] = [];
+        // array[0][0] = 10;
+
+        // Dviejų lygių masyvas
+
+        // const array = [];
+
+        // for(let i = 0; i < 10; i++) {
+        //     array[i] = [];
+            
+        //     for(let x = 0; x < 10; x++) {
+        //         array[i][x] = rand(10, 50);
+        //     }
+        // }
+        
+        // console.log(array);
+
+        // Trijų lygių masyvas
+
+        const array = [];
+
+        for(let i = 0; i < 10; i++) {
+            array[i] = [];
+            
+            for(let x = 0; x < 10; x++) {
+                array[i][x] = [];
+
+                for(let y = 0; y < 10; y++) {
+                    array[i][x][y] = rand(10, 50);
+                }
+            }
+        }
+        
+        // console.log(array);
+
+        // Reikšmės keitimas
+
+        array[0][1][2] = 'Pakeistas';
+
+        document.write(array);
+
+        // Visus skaičius esančius masyve padauginkite iš dviejų
+        
+        for(let i = 0; i < array.length; i++) {
+            for(let x = 0; x < array[i].length; x++) {
+                for(let y = 0; y < array[i][x].length; y++) {
+                    array[i][x][y] *= 2; 
+                }
+            }
+        }
+
+        console.log(array);
+
+        // Sugeneruokite masyvą iš 10 elementų, kurio elementai 
+        // būtų masyvai iš 5 elementų su reikšmėmis nuo 5 iki 25.
+        
+        const newArray = [];
+
+        for(let pirmas = 0; pirmas < 10; pirmas++) {
+            newArray[pirmas] = [];
+
+            for(let antras = 0; antras < 10; antras++) {
+                newArray[pirmas][antras] = rand(5, 25);
+            }
+        }
+
+        console.log(newArray);
+    </script>
+</body>
+</html>

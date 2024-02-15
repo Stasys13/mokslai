@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekursijos</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Ciklai būna:
+        // Inkrementiniai
+        // Rekursiniai
+
+        // function printNumbers(number) {
+        //     // console.log(number);
+            
+        //     if(number > 0)
+        //         printNumbers(number - 1);
+
+        //     console.log(number);
+        // }
+
+        // printNumbers(10);
+
+        function fact(skaicius) { //1
+            if(skaicius <= 1) 
+                return 1;
+            else 
+                return skaicius * fact(skaicius - 1);
+        }
+
+        console.log(fact(3));
+
+        // Sugeneruokite atsitiktinio (nuo 10 iki 20) ilgio masyvą, 
+        // kurio visi, išskyrus paskutinį, elementai yra atsitiktiniai 
+        // skaičiai nuo 0 iki 10, o paskutinis masyvas, kuris generuojamas 
+        // pagal tokią pat salygą kaip ir pirmasis masyvas. Viską pakartokite 
+        // atsitiktinį nuo 10 iki 30  kiekį kartų. 
+        // Paskutinio masyvo paskutinis elementas yra lygus 0;
+
+
+        function generateMultiArray(stop) { 
+            let limit = rand(10, 20);
+            const array = [];
+
+            for(let i = 0; i < limit; i++) {
+                if(i === limit - 1) {
+                    if(stop > 0) {
+                        array[i] = generateMultiArray(stop - 1);
+                    } else {
+                        array[i] = 0;
+                    }
+                } else {
+                    array[i] = rand(0, 10);
+                }
+            }
+
+            return array;
+        }
+
+        console.log(generateMultiArray(2));
+    </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Sugeneruokite masyvą iš 30 elementų (indeksai nuo 0 iki 29), kurių reikšmės yra atsitiktiniai skaičiai nuo 5 iki 25.
+        const array = [];
+
+        for(let i = 0; i < 30; i++) {
+            array[i] = rand(5, 25);
+        }
+
+        console.log(array);
+
+        //Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
+
+        // Su For Ciklo pagalba
+
+        // let counter = 0;
+
+        // for(let i = 0; i < array.length; i++) {
+        //     if(array[i] > 10)
+        //         counter++;
+        // }
+
+        // console.log(`Reikšmių didesnių nei 10 yra: ${counter}`);
+
+        const lessThanTen = array.filter((reiksme, indeksas, masyvas) => reiksme > 10);
+
+        console.log(`Reikšmių didesnių nei 10 yra: ${lessThanTen.length}`);
+        
+        //Raskite didžiausią masyvo reikšmę ir jos indeksą arba indeksus jeigu yra keli;
+        
+        let max = 0;
+
+        for(let i = 0; i < array.length; i++) {
+            if(array[i] > max)
+                max = array[i];
+        }
+
+        console.log(`Didžiausia reikšmė: ${max}`);
+
+        console.log(`Didžiausia reikšmė su Math.max: ${Math.max(...array)}`);
+        
+        // const indeksai = [];
+
+        // for(let i = 0; i < array.length; i++) {
+        //     if(array[i] === max)
+        //         indeksai.push(i);
+        // }
+
+        // console.log(`Pozicijos su didžiausiomis reikšmėmis: ${indeksai}`);
+
+        const indeksai = [];
+
+        array.forEach((value, index) => value === max && indeksai.push(index));
+
+        console.log(`Pozicijos su didžiausiomis reikšmėmis: ${indeksai}`);
+
+        // Suskaičiuokite visų porinių (lyginių) indeksų reikšmių sumą;
+
+        // const suma = array.reduce(function(dabartineSuma, dabartineReiksme, dabartinisIndeksas) {
+        //     console.log(dabartineSuma, dabartineReiksme, dabartinisIndeksas);
+        //     if(dabartinisIndeksas % 2 === 0)
+        //         return dabartineSuma + dabartineReiksme;
+        //     else 
+        //         return dabartineSuma
+        // }, 0);
+
+        // console.log(suma);
+
+        const suma = array.reduce((sum, value, index) => index % 2 === 0 ? sum + value : sum, 0);
+
+        console.log(`Reikšmių su lyginiais indeksais suma: ${suma}`);
+
+        // Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
+        
+        // const newArray = [];
+
+        // for(let i = 0; i < array.length; i++) {
+        //     newArray[i] = array[i] - i;
+        // }
+
+        // console.log(newArray);
+
+        const newArray = array.map((value, index) => value - index);
+
+        console.log(`Masyvas su modifikuotomis reikšmėmis: ${newArray}`);
+
+        // Papildykite masyvą papildomais 10 elementų su reikšmėmis nuo 5 iki 25, 
+        // kad bendras masyvas padidėtų iki indekso 39;
+
+        for(let i = 0; i < 10; i++) {
+            array.push(rand(5, 25));
+        }
+
+        console.log(array);
+
+        // Iš masyvo elementų sukurkite du naujus masyvus. 
+        // Vienas turi būti sudarytas iš neporinių indeksų reikšmių, o kitas iš porinių;
+
+        // const firstArray = [];
+        // const secondArray = [];
+
+        // for(let i = 0; i < array.length; i++) {
+        //     if(i % 2 === 0) {
+        //         firstArray[firstArray.length] = array[i];
+        //     } else {
+        //         secondArray[secondArray.length] = array[i];
+        //     }
+        // }
+
+        // console.log(firstArray);
+        // console.log(secondArray);
+
+        // forEach panaudojimas
+
+        // const firstArray = [];
+        // const secondArray = [];
+
+        // array.forEach((value, index) => index % 2 === 0 ? firstArray.push(value) : secondArray.push(value));
+
+        
+        const firstArray = array.filter((value, index) => index % 2 === 0 && value);
+        const secondArray = array.filter((value, index) => index % 2 !== 0 && value);
+
+        console.log(firstArray);
+        console.log(secondArray);
+
+        // Pirminio masyvo elementus su poriniais indeksais padarykite lygius 0 jeigu jie didesni už 15;
+            
+        // for(let i = 0; i < array.length; i++) {
+        //     if(array[i] > 15 && i % 2 === 0)
+        //         array[i] = 0;
+        // }
+
+        // console.log(array);
+
+        const nulledArray = array.map((value, index) => value > 15 && index % 2 === 0 ? 0 : value);
+
+        console.log(`Modifikuotas masyvas: ${nulledArray}`);
+        
+        // Suraskite pirmą indeksą, kurio elemento reikšmė didesnė už 10;
+
+        // let indeksas = 0;
+
+        // for(let i = 0; i < array.length; i++) {
+        //     if(array[i] > 10) {
+        //         indeksas = i;
+        //         break;
+        //     }
+        // }
+
+        // const indeksas = array.findIndex((value) => value > 10);
+
+        // console.log(`Indeksas yra: ${indeksas}`);
+
+        // const deletedArray = array.filter((value, index) => index % 2 === 0);
+
+        // console.log(deletedArray);
+
+        
+        document.write(`<p>${array}</p>`);
+        
+        for(let i = array.length - 1; i >= 0; i--) {
+            if(i % 2 === 0)
+                array.splice(i, 1);          
+        }
+
+        document.write(`<p>${array}</p>`);
+    </script>
+</body>
+</html>

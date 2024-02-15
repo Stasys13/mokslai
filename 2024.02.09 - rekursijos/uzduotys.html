@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>daugiamaciai</title>
+</head>
+
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        document.write(`<h1>-------PENKTA  UZDUOTIS ------</h1>`);
+
+        // Sukurkite masyvą iš 10 elementų. Masyvo reikšmes užpildykite pagal taisyklę: generuokite skaičių nuo 0 iki 5. 
+        // Ir sukurkite tokio ilgio masyvą. Jeigu reikšmė yra 0 masyvo nekurkite. Antro lygio masyvo reikšmes užpildykite atsitiktiniais skaičiais nuo 0 iki 10.
+        // Ten kur masyvo nekūrėte reikšmę nuo 0 iki 10 įrašykite tiesiogiai.
+
+        const array = [];
+
+        for (let i = 0; i < 10; i++) {
+            // array[i] = []
+            let numbers = rand(0, 5)
+
+            if (numbers === 0) {
+                array[i] = rand(0, 10)
+            } else {
+                array[i] = []
+
+                for (let x = 0; x < numbers; x++) {
+                    let number = rand(0, 10)
+                    array[i].push(number)
+                }
+            }
+        }
+        console.log(array);
+
+        document.write(`<h1>-------SESTA  UZDUOTIS ------</h1>`);
+
+        //Paskaičiuokite 5 uždavinio masyvo visų reikšmių sumą ir išrūšiuokite masyvą taip, kad pirmiausiai eitų mažiausios masyvo reikšmės arba jeigu reikšmė yra masyvas, to masyvo reikšmių sumos.
+
+        //    const sum = [];
+        let suma = 0;
+        for (let i = 0; i < array.length; i++) {
+            if(typeof array[i] === `number`) 
+                suma += array[i];
+
+            for (let x = 0; x < array[i].length; x++) {
+                suma += array[i][x];
+            }
+        }
+
+        // const reiksmiuSumos = [];
+        // for (let i = 0; i < array.length; i++) {
+        //     let suma2 = 0;
+        //     for (let x = 0; x < array[x].length; x++) {
+        //         suma2 += array[i][x];
+        //     }
+        //     reiksmiuSumos.push(suma2);
+
+
+        // }
+
+       
+        console.log(`Suma`,suma);
+        
+        // console.log(`Reiksmiu sumos nuo maziausio iki didziausio`, reiksmiuSumos);
+        
+        
+
+        array.sort(function(a, b) {
+            if(typeof a === `object`) {
+                let sumaA = 0;
+                for(let i = 0; i < a.length; i++) {
+                    sumaA += a[i];
+                   
+                } 
+                console.log(`A:${sumaA}`);
+                }
+                if(typeof b === `object`) {
+                    let sumaB = 0;
+                for(let i = 0; i < b.length; i++) {
+                    sumaB += b[i];
+                    
+                } 
+                console.log(`B:${sumaB}`);
+                }
+                a - b
+                return 1;
+
+                b - a
+                return -1;
+
+                a = b
+                return 0;
+               
+                
+            });
+
+            console.log(array.sort());
+            
+            
+
+            
+            
+
+           
+            // jeigu a masyvas:
+            // let sumaA = 0;
+            // for(let i = 0; i < a.length; i++) {
+            //     sumaB += a[i];
+            // }
+
+            // jei b masyvas
+            // tie patys veiksmai
+
+            
+            // return -1; // Neigiama reiksme elementas keliau zemiau
+            // return 1; // Teigiama elementas keliauja auksciau
+            // return 0; //Nekeiciam pozicionavimo
+            
+      
+
+
+    </script>
+</body>
+
+</html>

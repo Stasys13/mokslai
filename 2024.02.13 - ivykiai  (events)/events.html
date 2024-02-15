@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events (Įvykiai)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="text-center my-5">
+        <div class="first-result"></div>
+        <button class="btn btn-primary btn-large first-example">Paspausk Mane</button>
+    </div>
+    <div class="text-center my-5">
+        <div class="second-result"></div>
+        <button class="btn btn-primary btn-large second-example" onclick="handleClick(event)">Paspausk Mane</button>
+    </div>
+    <div class="text-center my-5">
+        <div class="third-result"></div>
+        <button class="btn btn-primary btn-large third-example">Paspausk Mane</button>
+    </div>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // EVENTO PRISKYRIMAS NAUDOJANT addEventListener metodą
+
+        // Evento registravimas su perduodama deklaruota funkcija
+        // function handleClick() {
+        //     console.log('Paspaudimas registruotas');
+        // }
+
+        // document.querySelector('button').addEventListener('click', handleClick);
+        
+        let kiekis = 0;
+
+        document.querySelector('.first-example').addEventListener('click', (e) => {
+            // Įvykdom pakeitimą 
+            kiekis++;
+            
+            let result = kiekis > 10 ? `<strong style="color: red;">${kiekis}</strong>` : kiekis;
+            // Atvaizduojam pakeitimą
+            document.querySelector('.first-result').innerHTML = `Mygtukas paspaustas ${result} kartų`;
+        });
+
+        // INLINE EVENT'O REGISTRAVIMAS
+        
+        function handleClick(e) {
+            // alert('Pranešimas');
+
+            // Įvykio duomenys
+            // console.log(e);
+            
+            const skaicius = rand(0, 45000);
+
+            document.querySelector('.second-result').textContent = `Iškritęs skaicius yra: ${skaicius}`;
+        }
+
+        // EVENT'O REGISTRAVIMAS 
+        document.querySelector('.third-example').onclick = (e) => {
+            const array = [];
+
+            for(let i = 0; i < 10; i++) {
+                array[i] = rand(0, 99);
+            }
+
+            document.querySelector('.third-result').textContent = `Šio vakaro laimingi kamuoliukai: ${array.join(' - ')}`;
+        }
+
+        // Priregistruokite įvykį visiems mygtukams, kuriame kaitaliotumėte fono spalvą iš mėlynos į geltoną
+        document.querySelectorAll('button').forEach(el => {
+            el.addEventListener('click', (e) => {
+                // Klasės kaitaliojimas
+                // if(el.classList.contains('btn-warning')) {
+                //     el.classList.remove('btn-warning');
+                // } else {
+                //     el.classList.add('btn-warning');
+                // }
+
+                // Atliekamas toks pats veiksmas metodo pagalba
+                el.classList.toggle('btn-warning');
+            });
+        });
+
+    </script>
+</body>
+</html>

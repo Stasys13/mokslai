@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        document.write(`<h1>-------PIRMA   UZDUOTIS ------</h1>`);
+        // Sugeneruokite masyvą iš 10 elementų, kurio elementai 
+        // būtų masyvai iš 5 elementų su reikšmėmis nuo 5 iki 25.
+
+        let array = [];
+
+        for (let i = 0; i < 10; i++) {
+            array[i] = [];
+
+            for (let x = 0; x < 5; x++) {
+                array[i][x] = rand(5, 25);
+            }
+        }
+
+        console.log(array);
+        document.write(array);
+
+        document.write(`<h1>-------ANTRA  UZDUOTIS (A)------</h1>`);
+        // Naudodamiesi 1 uždavinio masyvu:
+        // Suskaičiuokite kiek masyve yra elementų didesnių už 10;
+
+        let kiekis = 0;
+
+        for (let i = 0; i < array.length; i++) {
+
+            for (let x = 0; x < array[i].length; x++) {
+                if (array[i][x] > 10)
+                    kiekis++
+
+            }
+
+        }
+
+        console.log(kiekis);
+        document.write(kiekis);
+
+        document.write(`<h1>-------ANTRA  UZDUOTIS (B)------</h1>`);
+
+        //Raskite didžiausio elemento reikšmę;
+
+        let max = 0;
+
+        for (let i = 0; i < array.length; i++) {
+
+            for (let x = 0; x < array[i].length; x++) {
+                if (array[i][x] > max)
+                    max = array[i][x];
+
+            }
+
+        }
+        console.log(max);
+        document.write(max);
+
+        document.write(`<h1>-------ANTRA  UZDUOTIS (C)------</h1>`);
+
+        //Suskaičiuokite kiekvieno antro lygio masyvų su vienodais indeksais sumas (t.y. suma reikšmių turinčių indeksą 0, 1 ir t.t.)
+
+        const sumos = [0, 0, 0, 0, 0];
+
+
+        for (let i = 0; i < array.length; i++) {
+            for (let x = 0; x < array[i].length; x++) {
+                sumos[x] += array[i][x];
+            }
+        }
+        console.log(sumos);
+
+        // const columnSum = (array) => {
+        //     const sumArray = [];
+        //     for (let i = 0; i < array[i].length; i++) {
+        //         let sum = 0;
+        //         for (let j = 0; j < array.length; j++) {
+        //             sum += array[j][i];
+        //         }
+        //         sumArray.push(sum);
+        //     }
+        //     return sumArray;
+        // }
+
+        document.write(`<h1>-------ANTRA  UZDUOTIS (D)------</h1>`);
+
+        //Visus antro lygio masyvus “pailginkite” iki 7 elementų
+
+        for (let i = 0; i < array.length; i++)
+            for (let x = 0; x < 2; x++) {
+                numbers = rand(5, 25)
+                array[i].push(numbers)
+            }
+
+        console.log(array);
+        // document.write(array);
+
+        document.write(`<h1>-------ANTRA  UZDUOTIS (E)------</h1>`);
+
+        //Suskaičiuokite kiekvieno iš antro lygio masyvų elementų sumą atskirai ir sumas panaudokite kaip reikšmes sukuriant naują masyvą.
+        // T.y. pirma naujo masyvo reikšmė turi būti lygi mažesnio masyvo, turinčio indeksą 0 dideliame masyve, visų elementų sumai 
+
+        const suma = [];
+
+        for (let i = 0; i < array.length; i++) {
+            let sum = 0;
+
+            for (let x = 0; x < array[x].length; x++) {
+                sum += array[i][x];
+            }
+            suma.push(sum);
+        }
+        console.log(suma);
+
+
+
+        // document.write(`<h1>-------TRECIA  UZDUOTIS ------</h1>`);
+
+        //Sukurkite masyvą iš 10 elementų. Kiekvienas masyvo elementas turi būti masyvas su atsitiktiniu kiekiu nuo 2 iki 20 elementų.
+        // Elementų reikšmės atsitiktinai parinktos raidės iš intervalo A-Z. Išrūšiuokite antro lygio masyvus pagal abėcėlę 
+        //(t.y. tuos kur su raidėm).
+
+        const array3 = []
+        let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (let i = 0; i < 10; i++) {
+            array3[i] = [];
+            let ilgis = rand(2, 20);
+
+            for (let x = 0; x < ilgis; x++) {
+                array3[i][x] = letters[rand(0, letters.length - 1)];
+
+            }
+        }
+        
+        console.log(array3);
+        document.write(array3);
+
+        for( let i = 0; i < array3.length; i++) {
+            array3[i].sort();
+        }
+        console.log(array3);
+        document.write(array3);
+
+
+            document.write(`<h1>-------KETVIRTA UZDUOTIS ------</h1>`);
+
+        // Išrūšiuokite trečio uždavinio pirmo lygio masyvą taip, kad elementai kurių masyvai trumpiausi eitų pradžioje.
+        // Masyvai kurie turi bent vieną “K” raidę, visada būtų didžiojo masyvo visai pradžioje.
+
+        array3.sort((a, b) => a.length - b.length);
+        array3.sort((a, b) => (a.includes(`K`) ? -1 : 1) - (b.includes(`K`) ? -1 : 1));
+
+        console.log(array3);
+
+
+
+
+        // const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    </script>
+</body>
+
+</html>

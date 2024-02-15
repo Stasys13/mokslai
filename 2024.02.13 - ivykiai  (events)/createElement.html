@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>createElement()</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        // BLOG'O ĮRAŠŲ GENERAVIMAS
+        // let html = `<div class="posts">`;
+
+        // for(let i = 0; i < 20; i++) {
+        //     html += `
+        //         <div class="single-post">
+        //             <h2>Random post title</h2>
+        //             <p>Random post content</p>
+        //             <div class="date">2024-02-13</div>
+        //         </div>
+        //     `;
+        // }
+
+        // html += `</div>`;
+
+        // console.log(html);
+
+        // document.getElementById('app').innerHTML = html;
+
+        const posts = document.createElement('div');
+        posts.classList.add('posts');
+
+        for(let i = 0; i < 20; i++) {
+            const post = document.createElement('div');
+            post.classList.add('single-post');
+
+            const heading = document.createElement('h2');
+            heading.textContent = 'Random post title';
+
+            const p = document.createElement('p');
+            // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText
+            p.innerText = 'Random post content';
+
+            const date = document.createElement('div');
+            date.textContent = '2024-02-13';
+            date.classList.add('date');
+            
+            post.append(heading, p, date);
+            posts.append(post);
+        }
+
+        document.getElementById('app').append(posts);
+
+
+
+
+    </script>
+</body>
+</html>
