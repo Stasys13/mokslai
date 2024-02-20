@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer-stopwatch</title>
+    <script src="timer.js" defer></script>
+    <style>
+        body {
+            color:white;
+            background-color: black;
+        }
+        .main {
+            width: 600px;
+            border: 2px solid darkgray;
+            border-radius: 15px;
+            margin: 50px auto;
+        }
+
+        .timer-stop {
+            display: flex;
+            width: 100%;
+        }
+
+        .timer,
+        .stopwatch {
+            width: 50%;
+            text-align: center;
+            border-bottom: 2px solid black;
+            padding: 15px 0px 15px 0px;
+
+        }
+
+        button {
+            border: none;
+            background-color: none;
+            gap: 20px;
+            color: white;
+            background-color:black;
+            padding: 20px;
+        }
+
+        .display {
+            padding: 22px;
+            width: 205px;
+            border-bottom: 1px solid darkgray;
+            font-size: 60px;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="timer-stop">
+            <div class="timer">
+                <a href="#display">TIMER</a> 
+            </div>
+            <div class="stopwatch">
+                <a href="#">STOPWATCH</a> 
+            </div>
+        </div>
+        <div class="">
+            <div id="display">00m 00s</div>
+        </div>
+        <div class="buttons">
+            <button>Start</button>
+            <button>Reset</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

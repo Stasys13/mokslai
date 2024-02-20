@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributai</title>
+</head>
+<body>
+    <a href="https://google.com">Nuoroda į google</a>
+    <script>
+        // https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute
+        const link = document.querySelector('a').getAttribute('href');
+
+        console.log(link);
+
+        document.querySelector('a').setAttribute('href', 'https://facebook.com');
+    </script>
+</body>
+</html>

@@ -105,14 +105,14 @@
         });
 
 
-       
+
         let intervalId = setInterval(() => {
             if (time === limit) {
                 let computerScore = limit - playerScore;
                 time = 0;
 
                 round++
-               
+
                 // roundResult = 0;
                 // playerScore = 0;
                 // const roundResult = computerScore - playerScore;
@@ -130,23 +130,23 @@
                 console.log('baig');
                 if (round === 2) {
                     clearInterval(intervalId);
-                // zaidimo pabaiga
-                if (computerScore > playerScore) {
-                    gameWinner = 'Kompiuteris';
-                } else if (computerScore < playerScore) {
-                    gameWinner = 'Žaidėjas';
-                } else {
+                    // zaidimo pabaiga
+                    if (computerScore > playerScore) {
+                        gameWinner = 'Kompiuteris';
+                    } else if (computerScore < playerScore) {
+                        gameWinner = 'Žaidėjas';
+                    } else {
+                        document.querySelector('.bendras').innerHTML =
+                            `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px">
+                                <h1>Žaidimas baigėsi lygiosiomis</h1>
+                                <button class="reset" onClick="window.location.reload()">Bandykite dar kartą</button>
+                            </div>`;
+                    }
                     document.querySelector('.bendras').innerHTML =
                         `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px">
-            <h1>Žaidimas baigėsi lygiosiomis</h1>
-            <button class="reset" onClick="window.location.reload()">Bandykite dar kartą</button>
-        </div>`;
-                }
-                document.querySelector('.bendras').innerHTML =
-                    `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px">
-        <h1>Žaidimą laimėjo ${gameWinner}, laimėjęs ${round} roundus</h1>
-        <button class="reset" onClick="window.location.reload()">Bandykite dar kartą</button>
-    </div>`;
+                            <h1>Žaidimą laimėjo ${gameWinner}, laimėjęs ${round} roundus</h1>
+                            <button class="reset" onClick="window.location.reload()">Bandykite dar kartą</button>
+                        </div>`;
                 }
 
             }
@@ -158,9 +158,9 @@
             box.style.backgroundColor = `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)} )`
 
             time++;
-              document.querySelector(`.time`).innerHTML = time;
+            document.querySelector(`.time`).innerHTML = time;
         }, 1000);
-      
+
 
 
 

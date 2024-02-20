@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocomplete</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <h3>Google search</h3>
+            <input type="text" onkeyup="handleSearch(event)" class="test m-3 form-control" placeholder="paieska">
+        </form>
+        <div class="result"></div>
+        <button type="submit" class=" btn btn-primary">Search</button>
+    </div>
+
+
+    <script>
+         const phrases = ['What is my IP', 'How many weeks in a year', 'How many ounces in a cup', 'How to screenshot on Mac', 'When is the Super Bowl', 'When is Easter', "When is Father's Day", 'What is Juneteenth', 'How do I register to vote', 'When is Thanksgiving']
+
+console.log(phrases)
+const handleSearch = (e) => {
+    const filter = document.querySelector('.test').value.toLowerCase();
+    const text = document.querySelector('.result');
+    text.innerHTML = '';
+    const suggestions = document.querySelector('.suggestions');
+    let counter = 0;
+   
+    for (i = 0; i < phrases.length; i++) {
+        let textValue = phrases[i].toLowerCase();
+        if (textValue.includes(filter)) {
+const textDisplay = document.createElement('div');
+            textDisplay.textContent = phrases[i];
+            textDisplay.addEventListener('click', function () {
+                document.querySelector('.test').value = this.textContent;
+                text.innerHTML = '';
+            })
+            text.appendChild(textDisplay)
+            counter++;
+            if (counter >= 5) {
+                return
+            }
+            if (filter === "") {
+                text.innerHTML = '';
+            }
+        }
+    }
+}
+    //     const phrases = [`What is my IP`, `How many weeks in a year`, `How many ounces in a cup`, `How to screenshot on Mac`, `When is the Super Bowl`, 'When is Easter', "When is Father's Day", 'What is Juneteenth', 'How do I register to vote', 'When is Thanksgiving'];
+
+    //     const handleSearch = (e) => {
+    //         e.preventDefault();
+
+    //         const filter = document.querySelector('.test').value.toLowerCase();
+    //         const text = document.querySelector('.result');
+    //         let counter = 0;
+    //         // text.innerHTML = '';
+
+
+    //         for (let i = 0; i < phrases.length; i++) 
+    //            if(textValue.includes(filter)) {
+                   
+    //             let textValue = phrases[i].toLowerCase();
+    //             if (textValue.includes(filter)) {
+    //                 const textDisplay = document.createElement('div');
+    //                 textDisplay.textContent = phrases[i];
+    //                 textDisplay.addEventListener("click", function (e) {
+    //                     document.querySelector('.test').value = this.textContent;
+    //                     text.innerHTML = '';
+    //                 })
+    //                 text.appendChild(textDisplay)
+    //                 counter++;
+    //                 if (counter >= 5) 
+    //                 return;
+    // //                 if(filter === "") {
+    // // text.innerHTML = '';}
+                   
+    //             }
+
+    //         }
+    //     }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

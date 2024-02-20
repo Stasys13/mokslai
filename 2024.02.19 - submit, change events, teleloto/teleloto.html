@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teleloto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <style>
+        .kamuoliukai {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .kamuoliukai div {
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .kamuoliukai div.yellow {
+            background-color: rgb(223, 205, 12);
+            color: black;
+        }
+
+        .kamuoliukai div.red {
+            background-color: rgb(193, 11, 11);
+            color: white;
+        }
+
+        .kamuoliukai div.blue {
+            background-color: rgb(10, 107, 225);
+            color: white;
+        }
+
+        .kamuoliukai div.green {
+            background-color: rgb(18, 177, 16);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Išridenti kamuoliukai -->
+        <div class="kamuoliukai">
+            <div>75</div>
+            <div>19</div>
+            <div>14</div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="rollBall()">Ridenti</button>
+        </div>
+    </div>
+    <script>
+        const rand = (min, max) => {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // PIRMA VARIACIJA
+        // const luckyNumber = rand(0, 100);
+        // let finished = false;
+        // // console.log(luckyNumber)
+        // const rollBall = () => {
+        //     if(finished)
+        //         return;
+
+        //     const digit = rand(0, 100);
+
+        //     if(digit > 0 && digit <= 19)
+        //         document.querySelector('.kamuoliukai').innerHTML += `<div>${digit}</div>`;
+        
+        //     if(digit >= 20 && digit <= 39)
+        //         document.querySelector('.kamuoliukai').innerHTML += `<div class="yellow">${digit}</div>`;
+        
+        //     if(digit >= 40 && digit <= 59)
+        //         document.querySelector('.kamuoliukai').innerHTML += `<div class="red">${digit}</div>`;
+
+        //     if(digit >= 60 && digit <= 79)
+        //         document.querySelector('.kamuoliukai').innerHTML += `<div class="blue">${digit}</div>`;
+        
+        //     if(digit >= 79 && digit <= 100)
+        //         document.querySelector('.kamuoliukai').innerHTML += `<div class="green">${digit}</div>`;
+            
+        //     if(digit === luckyNumber) {
+        //         alert('SKAMBUTIS!');
+        //         finished = true;
+        //     }
+        // }
+
+        // ANTRA VARIACIJA
+        // const luckyNumber = rand(0, 100);
+
+        // const rollBall = () => {
+        //     const digit = rand(0, 100);
+
+        //     if(digit > 0 && digit <= 19)
+        //         document.querySelector('.kamuoliukai').innerHTML += `<div>${digit}</div>`;
+        
+        //     if(digit >= 20 && digit <= 39)
+        //         document.querySelector('.kamuoliukai').innerHTML += `<div class="yellow">${digit}</div>`;
+        
+        //     if(digit >= 40 && digit <= 59)
+        //         document.querySelector('.kamuoliukai').innerHTML += `<div class="red">${digit}</div>`;
+
+        //     if(digit >= 60 && digit <= 79)
+        //         document.querySelector('.kamuoliukai').innerHTML += `<div class="blue">${digit}</div>`;
+        
+        //     if(digit >= 79 && digit <= 100)
+        //         document.querySelector('.kamuoliukai').innerHTML += `<div class="green">${digit}</div>`;
+            
+        //     if(digit === luckyNumber) {
+        //         alert('SKAMBUTIS!');
+        //         document.querySelector('button').setAttribute('disabled', '');
+        //     }
+        // }
+
+        // TREČIA VARIACIJA (OPTIMIZACIJA)
+        const luckyNumber = rand(0, 100);
+        // const colors = {
+        //     19: '',
+        //     39: 'yellow',
+        //     59: 'red',
+        //     79: 'blue',
+        //     100: 'green'
+        // }
+
+        const rollBall = () => {
+            const digit = rand(0, 100);
+            let className = '';
+
+            // for(const breakPoint in colors) {
+            //     if(digit <= breakPoint) 
+            //         className = colors[breakPoint];
+            // }
+
+            if(digit >= 20 && digit <= 39)
+                className = `yellow`;
+        
+            if(digit >= 40 && digit <= 59)
+                className = `red`;
+
+            if(digit >= 60 && digit <= 79)
+                className = `blue`;
+        
+            if(digit >= 79 && digit <= 100)
+                className = `green`;
+            
+            document.querySelector('.kamuoliukai').innerHTML += `<div class="${className}">${digit}</div>`;
+
+            if(digit === luckyNumber) {
+                alert('SKAMBUTIS!');
+                document.querySelector('button').setAttribute('disabled', '');
+            }
+        }
+    </script>
+</body>
+</html>

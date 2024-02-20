@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keys</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        // WINDOW OBJEKTAS ATSAKINGAS UŽ NARŠYKLĖS LANGO ĮVYKIUS IR SUSIJUSIĄ INFORMACIJĄ
+        window.addEventListener('keydown', (e) => {
+            console.log('Paspausta');
+        });
+
+        document.querySelector('input').addEventListener('keydown', (e) => {
+            console.log('Paspausta');
+        });
+
+        window.addEventListener('keyup', (e) => {
+            console.log('Atleista')
+        });
+
+        document.querySelector('input').addEventListener('keyup', (e) => {
+            console.log('Atleista');
+        });
+
+        // console.log(window);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="mb-3">
+                <label>Produkto pavadinimas</label>
+                <input type="text" class="form-control pirmas" onchange="handleInputChange(event)">
+            </div>
+            <div class="mb-3">
+                <label>Produkto kaina</label>
+                <input type="text" class="form-control antras" onchange="handleInputChange(event)">
+            </div>
+        </form>
+        <ul></ul>
+    </div>
+    <script>
+        // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event
+        const handleInputChange = (e) => {
+            console.log(e.target.value);
+            // console.log(document.querySelector('.pirmas').value);
+
+            document.querySelector('ul').innerHTML += `<li>${e.target.value}</li>`;
+        }
+    </script>
+</body>
+</html>
