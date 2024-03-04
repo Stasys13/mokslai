@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzduotis</title>
+    <style>
+    .image img {
+        width: 300px;
+        height: 300px;
+
+    }
+    .image2 img {
+        width: 300px;
+        height: 300px;
+
+    }
+</style>
+</head>
+<body>
+    <h1>-----1-----</h1>
+    <button onclick="atnesk()">Atnesk nuotrauka</button>
+    <div class="image"></div>
+
+    <h1>-----2-----</h1>
+    <div class="image2"></div>
+    <button onclick="fox()">Atnaujinti</button>
+
+    <h1>-----3-----</h1>
+
+    <button class="cat" onclick="kate(200)">kate200</button>
+    <button class="cat1" onclick="kate(203)">kate203</button>
+    <button class="cat2" onclick="kate(304)">kate304</button>
+
+    <div class="random"></div>
+
+    <h1>-----4-----</h1>
+    <h3 class="bit"></h3>
+    <div class="usd"></div>
+    <div class="gbp"></div>
+    <div class="eur"></div>
+    
+
+    <script>
+        function atnesk() {
+        fetch('https://dog.ceo/api/breeds/image/random')
+        .then(result => result.json())
+        .then(result => {
+            document.querySelector('div').innerHTML = `<img src="${result.message}">`
+        });
+    }
+
+    function fox() {
+        fetch('https://randomfox.ca/floof')
+        .then(result => result.json())
+        .then(result => {
+            document.querySelector('.image2').innerHTML =  `<img src="${result.image}">`
+            
+        })
+    }
+
+    fox();
+
+    function kate(e) {
+        // fetch(`https://http.cat/[200]`)
+        // .then(result => result.json())
+        // .then(result => {
+            document.querySelector('.random').innerHTML =  `<img src="https://http.cat/${e}">`
+            
+    //     })
+   }
+
+   setInterval(() => {
+   fetch(`https://api.coindesk.com/v1/bpi/currentprice.json`)
+        .then(result => result.json())
+        .then(result => {
+           
+            document.querySelector('.bit').innerHTML =  `<p> ${result.chartName} </p>
+                                                         <p> ${result.time.updatedISO} </p>`
+
+            document.querySelector('.usd').innerHTML =  `<p> ${result.bpi.USD.rate} ${result.bpi.USD.symbol}</p>`
+            document.querySelector('.gbp').innerHTML =  `<p> ${result.bpi.GBP.rate} ${result.bpi.GBP.symbol}</p>`
+            document.querySelector('.eur').innerHTML =  `<p> ${result.bpi.EUR.rate} ${result.bpi.EUR.symbol}</p>`
+           
+        })
+   }, 1000)
+
+    </script>
+</body>
+</html>

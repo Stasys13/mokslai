@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "Labai gera prekė",
+        "active": false,
+        "price": 12.59 
+    },
+    {
+        "id": 2,
+        "title": "Nauja prekė",
+        "active": true,
+        "price": 13.59
+    }
+]

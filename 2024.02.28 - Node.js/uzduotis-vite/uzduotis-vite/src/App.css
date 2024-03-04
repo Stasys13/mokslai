@@ -1,0 +1,31 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+.logos img {
+  width: 25px;
+  height: 25px; 
+  
+}
+.logotipas {
+  display: flex;
+  gap: 15px;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+}
+.logos {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 15px;
+}
+
+input {
+  position: relative;
+}
+
+
+
+.nav nav a {
+ color: black;
+}
+

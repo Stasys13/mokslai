@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #202124;
+            font-family: arial,sans-serif;
+        }
+
+        .google-timer {
+            border: 1px solid #3c4043;
+            border-radius: 8px;
+            margin: 50px auto;
+            max-width: 652px;
+        }
+
+        .google-timer .buttons {
+            border-top: 1px solid #3c4043;
+            padding: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .google-timer button {
+            color: #202124;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 2px;
+            border: none;
+            height: 29px;
+            padding: 0 1.2rem;
+            transition: background-color .3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .google-timer .start {
+            background-color: #8ab4f8;
+        }
+
+        .google-timer .reset {
+            background-color: #bdc1c6;
+        }
+
+        .google-timer .start:hover {
+            background-color: #1B66C9;
+        }
+
+        .google-timer .reset:hover {
+            background-color: #8f9296;
+        }
+
+        .google-timer .time {
+            padding: 1rem;
+            font-size: 56px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .google-timer .minutes::after {
+            content: "m";
+            font-size: 32px;
+        }
+
+        .google-timer .seconds::after {
+            content: "s";
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="google-timer">
+        <div class="time">
+            <span class="minutes"></span>
+            <span class="seconds"></span>
+        </div>
+        <div class="buttons">
+            <button onclick="start(event)" class="start">Start</button>
+            <button onclick="reset(event)" class="reset">Reset</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

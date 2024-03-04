@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+    <div class="image"></div>
+    <script>
+        fetch('https://dog.ceo/api/breeds/image/random')
+        .then(atsakymas => atsakymas.json()) //Turinio konvertavimo eilutė
+        .then(atsakymas => {
+            document.querySelector('.image').innerHTML = `<img src="${atsakymas.message}">`;
+        }); //Grąžinamas atsakymas
+    </script>
+</body>
+</html>

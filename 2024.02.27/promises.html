@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+    <style>
+        .loader {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            font-size: 200px;
+            color: black;
+            font-weight: bold;
+            font-family: Arial;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">KRAUNASI...</div>
+    <div class="result"></div>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // HTML fetchinimas
+        // fetch('https://www.google.com')
+        // .then(resp => resp.text())
+        // .then(resp => console.log(resp))
+
+        const pazadas = new Promise((sekmingas, nesekmingas) => {
+            setTimeout(() => {
+                if(rand(0, 1) === 0) {
+                    sekmingas('Pažadas išpildytas');
+                } else {
+                    nesekmingas('Serverio klaida');
+                }
+            }, 2000);
+        });
+
+        pazadas
+        .then(atsakymas => {
+            document.querySelector('.result').textContent = atsakymas;
+        })
+        .catch(klaida => {
+            document.querySelector('.result').textContent = klaida;
+        })
+        .finally(() => {
+            document.querySelector('.loader').style.display = 'none';
+        });
+
+
+        // Grandininė reakcija (Chaining)
+        const hello = () => {
+            return {
+                world: () => {
+                    return {
+                        everyone: () => {
+                            return 'Hello World Everyone';
+                        }
+                    }
+                }
+            }
+        }
+
+        console.log(hello().world().everyone());
+
+        // Toks pat aprašymas be chaininimo
+        const firstObject = hello();
+        const secondObject = firstObject.world();
+        const thirdObject = secondObject.everyone();
+
+        console.log(thirdObject);
+    </script>
+</body>
+</html>

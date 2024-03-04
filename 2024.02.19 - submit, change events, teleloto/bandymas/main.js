@@ -24,7 +24,7 @@ const onClickSearch = (e) => {
     const filteredPhrases = phrases.filter(onePhrase => onePhrase.toLowerCase().includes(enteredText.toLowerCase()))
 //  console.log(filteredPhrases)
  ""
-  //filter metodas
+//filter metodas
 // const array = [];
 //     for(let i = 0; i < phrases.length; i++) {
 //         if (phrases[i].toLowerCase().includes(enteredText.toLowerCase())) {
@@ -52,8 +52,6 @@ document.querySelectorAll(`li`).forEach((li) => li.addEventListener(`click`, cho
 }
 
 function choose (e) {
-    e.target.textContent
-    console.log(document.querySelector(`input` ))
    document.querySelector(`input`).value =  e.target.textContent
    document.querySelector(`.autocomplete`).innerHTML = `` ;
 }

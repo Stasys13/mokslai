@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import object, array data</title>
+</head>
+<body>
+    <script>
+        const object = {
+            pirmas: 10,
+            antras: false,
+            trecias: []
+        }
+
+        // const newObject = { ...object };
+        
+        // console.log(newObject);
+
+        // console.log(object.pirmas);
+        // console.log(object.antras);
+        // console.log(object.trecias);
+
+        const { pirmas, antras, trecias } = object;
+        
+        console.log(pirmas, antras, trecias);
+
+        console.log('------MASYVŲ PAVYZDYS-------');
+
+        const array = [15, 245, 18];
+
+        // const pirmasElementas = array[0]
+        // const antrasElementas = array[1]
+        // const treciasElementas = array[2]
+
+        const [pirmasElementas, antrasElementas, treciasElementas] = array;
+
+        console.log(pirmasElementas);
+        console.log(antrasElementas);
+        console.log(treciasElementas);
+
+    </script>
+</body>
+</html>

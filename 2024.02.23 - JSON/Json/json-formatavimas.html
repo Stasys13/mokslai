@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON formatavimas</title>
+</head>
+<body>
+    <script>
+        // JSON STRINGAS
+        const json = `
+            [
+                {
+                    "id": 1,
+                    "title": "Labai gera prekė",
+                    "active": false,
+                    "price": 12.59 
+                },
+                {
+                    "id": 2,
+                    "title": "Nauja prekė",
+                    "active": true,
+                    "price": 13.59
+                }
+            ]
+        `;
+
+        // JSON STRINGO KONVERSIJA
+        // PRIEŠ:
+        console.log(json);
+        // PO: 
+        console.log(JSON.parse(json));
+        
+        // Javascript kodo konvertavimas į JSON
+        const product = {
+            id: 1,
+            title: "Samsung telefonas",
+            price: 12.99,
+            active: true
+        }
+
+        const productJSON = JSON.stringify(product);
+
+        console.log(productJSON);
+    </script>
+</body>
+</html>

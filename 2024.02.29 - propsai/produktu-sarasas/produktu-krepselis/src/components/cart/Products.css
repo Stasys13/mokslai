@@ -1,0 +1,56 @@
+
+.container {
+    display: flex;
+    /* flex-direction: column; */
+}
+.foto {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+img {
+    width: 200px;
+    height: 100px;
+}
+
+.cart {
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+   
+   
+
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+    padding: 0 40px;
+   
+}
+.info h2 {
+    font-size: 20px;
+    color: lightskyblue;
+}
+.price {
+    display: flex;
+    flex-wrap: wrap;
+}
+p {
+    margin-top: 40px;
+}
+.rating {
+    margin-top: 10px;
+}
+.nuolaida {
+    width: 50px;
+    height: 30px;
+    background-color: #df5527;
+    font-size: 12px;
+}
