@@ -1,0 +1,20 @@
+.header {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  padding: 0px 50px;
+}
+input {
+    border: none;
+}
+.logo {
+    gap: 10px;
+    display: flex;
+}
+nav i {
+    font-size: 30px;
+}
+h6 {
+    font-weight: bold;
+}
