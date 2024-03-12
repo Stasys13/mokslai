@@ -4,6 +4,7 @@ import Kirpejos from './pages/user/Kirpejos';
 import Admin from './pages/admin/Admin';
 import PridetiKirpeja from './pages/admin/PridetiKirpeja';
 import EditKirpeja from './pages/admin/EditKirpeja';
+import KirpejosInfo from './pages/user/KirpejosInfo';
 import './App.css'
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/prideti-kirpeja" element={<PridetiKirpeja />} /> 
           <Route path="/admin/edit-kirpeja/:indentifikatorius" element={<EditKirpeja />} /> 
+          <Route path="/admin/kirpejos-info" element={<KirpejosInfo />} /> 
         </Routes>
       </BrowserRouter>
     </>
