@@ -56,6 +56,8 @@ const validateEmail = (email) => {
 const passwordValid = (password) => {
     return /[0-9]/.test(password);
 }
+
+
 app.post('/register', (req, res) => {
     console.log(req.body)
 
