@@ -30,22 +30,14 @@ const NewUser = () => {
 
     return (
         <>
-            <h1>Naujas vartotojas</h1>
+            <h1>Naujas seimo narys</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label>Vardas</label>
                     <input 
                         type="text" 
                         className="form-control" 
-                        name="name"
-                    /> 
-                </div>
-                <div className="mb-3">
-                    <label>Nuotrauka</label>
-                    <input 
-                        type="text" 
-                        className="form-control" 
-                        name="photo"
+                        name="vardas"
                     /> 
                 </div>
                 <div className="mb-3">
@@ -53,7 +45,15 @@ const NewUser = () => {
                     <input 
                         type="text" 
                         className="form-control" 
-                        name="last_name"
+                        name="pavarde"
+                    /> 
+                </div>
+                <div className="mb-3">
+                    <label>Partija</label>
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        name="partija"
                     /> 
                 </div>
                 <div className="mb-3">

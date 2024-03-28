@@ -35,15 +35,15 @@ router.post('/register',  async (req, res) => {
      const { email, password } = req.body;
 
      // Surasti vartotoją duomenų bazėje
-     const user = await User.findOne({ email });
+    //  const user = await User.findOne({ email });
  
-     // Patikrinti ar vartotojas rastas ir ar slaptažodis teisingas
-     if (user && user.password === password) {
-         req.session.loggedIn = true;
-         res.json("Sveikiname prisijungus");
-     } else {
-         res.status(401).json('Neteisingi prisijungimo duomenys');
-     }
+    //  // Patikrinti ar vartotojas rastas ir ar slaptažodis teisingas
+    //  if (user && user.password === password) {
+    //      req.session.loggedIn = true;
+    //      res.json("Sveikiname prisijungus");
+    //  } else {
+    //      res.status(401).json('Neteisingi prisijungimo duomenys');
+    //  }
     try {
         
         
@@ -83,7 +83,8 @@ router.post('/login', async (req, res) => {
                 vardas: data.vardas,
                 pavarde: data.pavarde,
                 partija: data.partija,
-                email: data.email
+                email: data.email,
+                pirmininkas: data.pirmininkas
             }
 
             res.json(req.session.user)

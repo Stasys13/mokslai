@@ -1,37 +1,46 @@
-import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import MainContext from '../../context/Main.jsx';
 import style from './NewProject.module.css';
 import axios from 'axios'
 
 const NewProject = () => {
-    const [message, setMessage] = useState();
-    const { setShowNewProject, user } = useContext(MainContext);
+    // Peradresavimo (redirect) kūrimas
+    const navigate = useNavigate();
 
+    // Produkto formos submitas
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const formData = new FormData(e.target);
-      
-        formData.append('author', user._id);
+        // Formos duomenų persiuntimas POST metodu
+        axios.post('http://localhost:3001/projects/project', {}, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
 
-        axios.post('http://localhost:3001/projects/project', formData)
-            .then(resp => setShowNewProject(false))
-            .catch(err => setMessage(err.message));
+
+        })
+
+            .then(resp => {
+                console.log(resp);
+                // Peradresavimo iniciavimas
+                navigate('/');
+            })
+            .catch(err => console.log(err))
     }
+
     return (
         <div className={style.newPost}>
-            <div className={style.close}
-                onClick={() => setShowNewProject(false)}
-            >
-                <i className='bi bi-x'></i>
-            </div>
             <div className={style.modal}>
-                <h2>Create new post</h2>
                 <form onSubmit={handleSubmit}>
-                    {message &&
-                        <div className='alert alert-danger'>{message}</div>
-                    }
+                    <h1>Naujas Projektas</h1>
+
                     <div className="mb-3">
+                        <h2 >Projekto pavadinimas</h2>
+                        <input type="text" className="form-control" name="description" />
+                    </div>
+
+                    <div className="mb-3">
+                        <h2>Prideti Nuotrauka</h2>
                         <input
                             type="file"
                             name="photo"
@@ -39,10 +48,27 @@ const NewProject = () => {
                         />
                     </div>
                     <div className="mb-3">
-                        <textarea
+                        <h2>Projekto aprasymas</h2>
+                        <input
                             className="form-control"
                             name="description"
-                        ></textarea>
+                        ></input>
+                    </div>
+                    <div className="mb-3">
+                        <h2>Talpinimo data</h2>
+                        <input
+                            type="date"
+                            className="form-control"
+                            name="description"
+                        ></input>
+                    </div>
+                    <div className="mb-3">
+                        <h2>Svarstymo data</h2>
+                        <input
+                            type="date"
+                            className="form-control"
+                            name="description"
+                        ></input>
                     </div>
                     <button className="btn btn-primary">Submit</button>
                 </form>

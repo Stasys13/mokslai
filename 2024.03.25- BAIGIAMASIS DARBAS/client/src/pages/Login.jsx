@@ -21,7 +21,11 @@ const Login = () => {
         axios.post('http://localhost:3001/users/login', data)
         .then(resp => {
             setUser(resp.data);
-            navigate('/Pirmininkas');
+            if(resp.data.pirmininkas) {
+                navigate('/pirmininkas');
+            } else {
+                navigate('/');
+            }
         })
         .catch(err => setMessage(err.response.data));
     }

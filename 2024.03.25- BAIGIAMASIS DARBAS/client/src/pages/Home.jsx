@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MainContext from '../context/Main.jsx';
 import axios from 'axios';
-import Project from '../components/projects/Project.jsx';
+import Projects from '../components/projects/Project.jsx';
 
 const Home = () => {
     const [data, setData] = useState([]);
@@ -30,7 +30,7 @@ const Home = () => {
 
             
             {data.map(project => 
-                <Project 
+                <Projects 
                     data={project} 
                     setLoading={setLoading} 
                     key={project._id} 

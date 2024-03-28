@@ -24,18 +24,18 @@ const Navigation = () => {
             <nav className={style.navigation}>
                 <ul>
                     <li>
-                        <Link to="/" className={style.link}>
+                        <Link to="/Login" className={style.link}>
                             <i className="bi bi-house-door"></i>
-                            <span>Home</span>
+                            <span> Prisijungti</span>
                         </Link>
                     </li>
+                     {/* <li>
+                        <Link to="/Login" className={style.link}>
+                            <i className="bi bi-house-door"></i>
+                            <span>Seimo nariai/ Prisijungti</span>
+                        </Link>
+                    </li> */}
                     {/* <li>
-                        <Link to="/" className={style.link}>
-                            <i className="bi bi-house-door"></i>
-                            <span>Seimo nariai</span>
-                        </Link>
-                    </li>
-                    <li>
                         <Link
                             className={style.link}
                             onClick={() => setShowNewProject(true)}
@@ -43,7 +43,7 @@ const Navigation = () => {
                             <i className="bi bi-plus-square"></i>
                             <span>Naujas projektas</span>
                         </Link>
-                    </li> */}
+                    </li>  */}
                     {/* <li>
                         <Link 
                             className={style.link}
