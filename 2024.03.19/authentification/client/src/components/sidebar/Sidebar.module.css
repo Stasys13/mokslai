@@ -1,0 +1,45 @@
+.sidebar {
+    width: 245px;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 1px solid var(--border-color);
+    padding: 2.8rem .8rem;
+}
+
+.logo {
+    padding: 0 .9rem;
+    margin-bottom: 2.2rem;
+}
+
+.logo img {
+    max-width: 103px;
+}
+
+.navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.link {
+    font-size: 16px;
+    color: black;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: .3rem .8rem;
+    border-radius: 5px;
+    margin-bottom: .5rem;
+    transition: background-color .3s ease-in-out;
+}
+
+.link i {
+    font-size: 23px;
+}
+
+.link:hover {
+    background-color: rgb(222, 222, 222);
+}

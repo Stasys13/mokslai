@@ -1,0 +1,84 @@
+.comments {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.477);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    max-width: 1000px;
+    width: 100%;
+    background-color: white;
+    border-radius: 0 5px 5px 0;
+    overflow: hidden;
+    display: flex;
+}
+
+.leftSide,
+.rightSide {
+    width: 50%; 
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.close {
+    color: white;
+    font-size: 50px;
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+    cursor: pointer;
+}
+
+.userInfo {
+    padding: 1.5rem 1.2rem 1.2rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.userPhoto {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.commentsList {
+    padding: 1.2rem;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.mainPhoto {
+    height: 625px;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.newComment {
+    position: relative;
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.778);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

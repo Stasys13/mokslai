@@ -1,0 +1,25 @@
+
+.commentForm {
+    display: flex;
+    border-top: 1px solid var(--border-color);
+    padding: .5rem 1.2rem;
+}
+
+.commentForm textarea {
+    width: 100%;
+    border: none;
+    resize: none;
+    padding: .2rem 0;
+    height: 35px;
+}
+
+.commentForm textarea:focus {
+    outline: none;
+}
+
+.commentForm button {
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: #0095f6;
+}

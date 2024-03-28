@@ -6,7 +6,6 @@ import User from '../model/user.js'
 const router = Router()
 
 
-
 router.get('/', async (req, res) => {
     // Tikriname ar vartotojas yra prisijungęs, jeigu ne, grąžinsime statusą 401 ir žinutę: "Turinys prieinamas tik registruotiems varotojams"
     // Jeigu taip: Tuomet grąžinsime statusą 200 ir pasisveikinimo žinutę: "Labas Pasauli"
@@ -17,8 +16,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-
-router.post('/users', async (req, res) =>  {
+router.post('/', async (req, res) =>  {
     // Gauti vartotojo įvestis iš užklausos
     const { email, password } = req.body;
 

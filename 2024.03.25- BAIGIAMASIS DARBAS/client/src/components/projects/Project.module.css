@@ -1,0 +1,71 @@
+.post {
+    max-width: 470px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 0 1rem;
+    margin: 0 0 1rem;
+}
+
+.post .photo {
+    margin: 0 0 .6rem;
+}
+
+.post .photo img {
+    max-width: 100%;
+    width: 470px;
+    height: 470px;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.post .user {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1rem;
+}
+
+.post .user .userName {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.post .userPhoto img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    display: block;
+}
+
+.description .userName {
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.actions {
+    font-size: 24px;
+}
+
+.actions ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.actions ul li {
+    cursor: pointer;
+}
+
+.likeCount {
+    display: flex;
+    gap: 5px;
+    padding: 0 0 .3rem;
+}

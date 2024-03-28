@@ -1,0 +1,35 @@
+.profile {
+    display: flex;
+    gap: 7rem;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5rem;
+}
+
+.photo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.userName {
+    font-size: 20px;
+}
+
+.postsCount {
+    display: flex;
+    gap: 5px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.bio {
+    white-space: pre;
+}
