@@ -1,31 +1,30 @@
 import { useNavigate } from 'react-router-dom';
-import MainContext from '../../context/Main.jsx';
+import {  useState } from 'react';
 import style from './NewProject.module.css';
 import axios from 'axios'
 
-const NewProject = () => {
+
+const NewProject = ({data}) => {
     // Peradresavimo (redirect) kūrimas
     const navigate = useNavigate();
 
+
+    const [message, setMessage] = useState();
     // Produkto formos submitas
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Formos duomenų persiuntimas POST metodu
-        axios.post('http://localhost:3001/projects/project', {}, {
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        const formData = new FormData(e.target);
+        //Laikinas sprendimas
+         formData.append('author', '6602a7ca5568d44f27bc869c');
 
 
-        })
-
+        axios.post('http://localhost:3001/projects/project/', formData)
             .then(resp => {
-                console.log(resp);
-                // Peradresavimo iniciavimas
-                navigate('/');
+                navigate('/')
             })
-            .catch(err => console.log(err))
+            .catch(err => setMessage(err.response.data.message));
+
     }
 
     return (
@@ -36,30 +35,26 @@ const NewProject = () => {
 
                     <div className="mb-3">
                         <h2 >Projekto pavadinimas</h2>
-                        <input type="text" className="form-control" name="description" />
+                        <input type="text"
+                            className="form-control"
+                            name="pavadinimas"
+                        />
                     </div>
 
                     <div className="mb-3">
                         <h2>Prideti Nuotrauka</h2>
                         <input
                             type="file"
-                            name="photo"
+                            name="foto"
                             className="form-control"
                         />
                     </div>
                     <div className="mb-3">
                         <h2>Projekto aprasymas</h2>
                         <input
+                            type="text"
                             className="form-control"
-                            name="description"
-                        ></input>
-                    </div>
-                    <div className="mb-3">
-                        <h2>Talpinimo data</h2>
-                        <input
-                            type="date"
-                            className="form-control"
-                            name="description"
+                            name="aprasymas"
                         ></input>
                     </div>
                     <div className="mb-3">
@@ -67,11 +62,13 @@ const NewProject = () => {
                         <input
                             type="date"
                             className="form-control"
-                            name="description"
+                            name="data_svarstymo"
                         ></input>
                     </div>
+                    
                     <button className="btn btn-primary">Submit</button>
                 </form>
+                {/* <div>{data.statusas?.statusas}</div> */}
             </div>
         </div>
     );

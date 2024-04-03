@@ -1,8 +1,8 @@
-// const auth = (req, res, next) => {
-//     if(req.session.user)
-//         return next();
+const auth = (req, res, next) => {
+    if(req.session.user)
+        return next();
     
-//     res.sendStatus(401);
-// }
+    res.sendStatus(401);
+}
 
-// export default auth;
+export default auth;

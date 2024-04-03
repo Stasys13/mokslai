@@ -1,24 +1,32 @@
 import { Router } from 'express';
 import bcrypt from 'bcrypt';
 import User from '../model/user.js';
+import auth from '../middleware/auth.js'
 
 const router = Router();
+// router.get('/check-auth', (req, res) => {
+//     if(req.session.user) {
+//         res.json(req.session.user);
+//     } else {
+//         res.sendStatus(401);
+//     }
+// });
 
 // Grazinamas visu postu sarasas
 router.get('/user', async (req, res) => {
     try {
         // Populate metodas uzpildo schemoje pazymeta raktazodi modelio informacijoje
-       res.json(await User
-                        .find()
-                        // .populate('autorius', ['vardas', 'pavarde', 'partija'])
-                        
+        res.json(await User
+            .find()
+            // .populate('autorius', ['vardas', 'pavarde', 'partija'])
+
         );
     } catch {
         res.status(500).json('ivyko prisijungimo klaida')
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id',  async (req, res) => {
     //vieno iraso paemimas
 
     // Norint paimti parametro reiksme: req.params
@@ -31,12 +39,12 @@ router.get('/:id', async (req, res) => {
 
 router.post('/register',  async (req, res) => {
     // Patikrinti ar vartotojas yra adminas (pirmininkas)
-     // Gauti vartotojo įvestis iš užklausos
-     const { email, password } = req.body;
+    // Gauti vartotojo įvestis iš užklausos
+    // const { email, password } = req.body;
 
-     // Surasti vartotoją duomenų bazėje
+    // // Surasti vartotoją duomenų bazėje
     //  const user = await User.findOne({ email });
- 
+
     //  // Patikrinti ar vartotojas rastas ir ar slaptažodis teisingas
     //  if (user && user.password === password) {
     //      req.session.loggedIn = true;
@@ -45,8 +53,12 @@ router.post('/register',  async (req, res) => {
     //      res.status(401).json('Neteisingi prisijungimo duomenys');
     //  }
     try {
-        
-        
+
+        const limitas = await User.countDocuments();
+        if (limitas >= 141) {
+            return res.status(403).send('Virsytas limitas') 
+        }
+
         //Slaptazodzio sifravimas
         // hash - yra sifravimo stringas
         req.body.password = await bcrypt.hash(req.body.password, 10);
@@ -63,7 +75,7 @@ router.post('/register',  async (req, res) => {
     }
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login',  async (req, res) => {
     // Prisijungimui tikimes
     // Email ir password
     try {
@@ -71,28 +83,30 @@ router.post('/login', async (req, res) => {
         const data = await User.findOne({ email: req.body.email });
         // Jei vartotojas nerastas , nutraukiame funkcija ir graziname zinute
         if (!data)
-           return res.status(401).json('Neteisingas email adresas');
+            return res.status(401).json('Neteisingas email adresas');
 
         // Jei vartotojo slaptazodis nesutampa su ivestu , graziname klaidos koda ir zinute
-        if(!await bcrypt.compare(req.body.password, data.password))
-            return res.status(401).json('Neteisingas slaptazodis ') 
+        if (!await bcrypt.compare(req.body.password, data.password))
+            return res.status(401).json('Neteisingas slaptazodis ')
 
-            // Priskiriame vartotojo informacija prie sesijos
-            req.session.user = {
-                _id: data._id,
-                vardas: data.vardas,
-                pavarde: data.pavarde,
-                partija: data.partija,
-                email: data.email,
-                pirmininkas: data.pirmininkas
-            }
+        // Priskiriame vartotojo informacija prie sesijos
+        req.session.user = {
+            _id: data._id,
+            vardas: data.vardas,
+            pavarde: data.pavarde,
+            partija: data.partija,
+            email: data.email,
+            pirmininkas: data.pirmininkas
+        }
 
-            res.json(req.session.user)
-        
+        res.json(req.session.user)
+
 
     } catch {
         res.status(500).json('ivyko prisijungimo klaida')
     }
+
+   
 });
 
 export default router;

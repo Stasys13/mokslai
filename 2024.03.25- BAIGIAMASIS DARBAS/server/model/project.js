@@ -31,6 +31,7 @@ const projectSchema = new Schema({
       statusas: {
             type: Schema.Types.ObjectId,
             ref: 'Status'
+          
       }
 }, {
       toJSON: {
