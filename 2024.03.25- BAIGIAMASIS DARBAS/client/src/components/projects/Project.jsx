@@ -59,21 +59,24 @@ const Project = ({ data }) => {
                         </>
                     )}
                 </td>
-
-                <td>
-                    <button
-                        className="btn btn-danger"
-                        onClick={() => handleDelete(data._id)}
-                    >
-                        Ištrinti
-                    </button>
-                    <Link
-                        to={'/edit-project/' + (data._id)}
-                        className="btn btn-warning"
-                    >
-                        Redaguoti
-                    </Link>
-                </td>
+                {/* {data.autorius._id === user._id && ( */}
+                    <>
+                        <td>
+                            <button
+                                className="btn btn-danger"
+                                onClick={() => handleDelete(data._id)}
+                            >
+                                Ištrinti
+                            </button>
+                            <Link
+                                to={'/edit-project/' + (data._id)}
+                                className="btn btn-warning"
+                            >
+                                Redaguoti
+                            </Link>
+                        </td>
+                    </>
+                {/* )} */}
             </tr>
 
         </>
